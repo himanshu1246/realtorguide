@@ -1,0 +1,6 @@
+[build]
+  command = "mkdir -p netlify_dist && cp index.html netlify_dist/ && cp -r public netlify_dist/"
+  publish = "netlify_dist"
+
+[build.environment]
+  NETLIFY_NEXT_PLUGIN_SKIP = "true"
