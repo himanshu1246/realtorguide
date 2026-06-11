@@ -556,7 +556,7 @@ body { font-family:"Inter",sans-serif; color:#111; background:#FFFFFF; line-heig
   display: flex;
   gap: 24px;
   width: max-content;
-  animation: scrollMarquee 8s linear infinite;
+  animation: scrollMarquee 15s linear infinite;
 }
 .testimonials-grid:hover {
   /* maybe pause on hover? No, user explicitly said "when he click on play button the moving should stop" */
@@ -570,7 +570,7 @@ body { font-family:"Inter",sans-serif; color:#111; background:#FFFFFF; line-heig
 }
 @keyframes scrollMarquee {
   0% { transform: translateX(0); }
-  100% { transform: translateX(calc(-50% - 16px)); }
+  100% { transform: translateX(calc(-50% - 12px)); }
 }
 
 .testimonial-card {
@@ -1597,7 +1597,9 @@ window.toggleKalakarVideo = function(card, index, event) {
 // Testimonials
 (function renderTestimonials(){
   const grid = document.getElementById('testimonialsGrid');
-  testimonialsData.forEach((t,i)=>{
+  if(!grid) return;
+  const marqueeData = [...testimonialsData, ...testimonialsData]; // Duplicate once for seamless loop
+  marqueeData.forEach((t,i)=>{
     grid.innerHTML += `
       <div class="testimonial-card reveal" data-tindex="${i}">
         <div class="testimonial-video-wrap" onclick="toggleTestimonialVideo(this, event)">
