@@ -16,15 +16,15 @@ const clients = [
 
 export function Clients({ onEnquiry }: { onEnquiry: () => void }) {
   return (
-    <section className="py-32 md:py-40 relative overflow-hidden" style={{ background: "#E7DBEF" }}>
+    <section className="py-32 md:py-40 relative overflow-hidden" style={{ background: "#F8F7FF" }}>
       <div className="container mx-auto px-6 md:px-12 mb-20">
         <div className="flex items-center gap-3 mb-6">
-          <span className="w-12 h-[2px] rounded-full" style={{ background: "linear-gradient(90deg, #6E3482, #34D399)" }} />
-          <span className="text-sm font-semibold tracking-[0.2em] uppercase" style={{ color: "#6E3482" }}>Our Partners</span>
+          <span className="w-12 h-[2px] rounded-full" style={{ background: "linear-gradient(90deg, #7B5CF6, #34D399)" }} />
+          <span className="text-sm font-semibold tracking-[0.2em] uppercase" style={{ color: "#7B5CF6" }}>Our Partners</span>
         </div>
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
           <div>
-            <h2 className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold tracking-tight mb-4" style={{ color: "#49225B" }}>
+            <h2 className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold tracking-tight mb-4" style={{ color: "#1D1D2B" }}>
               Clients We Have<br /><span className="gradient-text">Worked With</span>
             </h2>
             <p className="max-w-xl text-lg leading-relaxed" style={{ color: "#4B5563" }}>
@@ -41,19 +41,19 @@ export function Clients({ onEnquiry }: { onEnquiry: () => void }) {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
           {clients.map((client, i) => (
             <motion.div key={client.id} initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: i * 0.08 }} whileHover={{ y: -8, scale: 1.02 }}
-              className="group relative p-8 md:p-10 rounded-3xl cursor-pointer transition-all duration-500"
-              style={{ background: "#F5EBFA", border: "1px solid rgba(227,170,221,0.08)" }}
+              className="group relative p-8 md:p-10 rounded-[30px] cursor-pointer transition-all duration-500"
+              style={{ background: "#FFFFFF", border: "1px solid rgba(123,92,246,0.08)" }}
             >
-              <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-all duration-700" style={{ boxShadow: "0 15px 50px rgba(227,170,221,0.1)" }} />
-              <div className="text-6xl font-heading font-bold mb-6" style={{ color: "rgba(227,170,221,0.08)" }}>{String(client.id).padStart(2, "0")}</div>
+              <div className="absolute inset-0 rounded-[30px] opacity-0 group-hover:opacity-100 transition-all duration-700" style={{ boxShadow: "0 15px 50px rgba(123,92,246,0.1)" }} />
+              <div className="text-6xl font-heading font-bold mb-6" style={{ color: "rgba(123,92,246,0.08)" }}>{String(client.id).padStart(2, "0")}</div>
               <div className="relative z-10">
-                <h3 className="text-xl md:text-2xl font-bold mb-2 font-heading group-hover:text-purple transition-colors duration-300" style={{ color: "#49225B" }}>{client.name}</h3>
-                <p className="text-sm font-semibold mb-1" style={{ color: "#6E3482" }}>{client.type}</p>
+                <h3 className="text-xl md:text-2xl font-bold mb-2 font-heading group-hover:text-purple transition-colors duration-300" style={{ color: "#1D1D2B" }}>{client.name}</h3>
+                <p className="text-sm font-semibold mb-1" style={{ color: "#7B5CF6" }}>{client.type}</p>
                 <div className="flex items-center gap-2 text-xs" style={{ color: "#6B7280" }}>
                   <span className="w-1.5 h-1.5 rounded-full" style={{ background: "#34D399" }} />{client.location}
                 </div>
               </div>
-              <div className="absolute bottom-0 left-0 right-0 h-[2px] rounded-b-3xl scale-x-0 group-hover:scale-x-100 transition-transform duration-700" style={{ background: "linear-gradient(90deg, transparent, #6E3482, transparent)" }} />
+              <div className="absolute bottom-0 left-0 right-0 h-[2px] rounded-b-3xl scale-x-0 group-hover:scale-x-100 transition-transform duration-700" style={{ background: "linear-gradient(90deg, transparent, #7B5CF6, transparent)" }} />
             </motion.div>
           ))}
         </div>

@@ -59,34 +59,34 @@ export function Production({ onEnquiry }: { onEnquiry?: () => void }) {
 
   return (
     <section className="production relative" id="production" style={{ background: "#0f0f11", padding: "100px 0", overflow: "hidden" }}>
-      <div className="absolute top-[-100px] right-[-100px] w-[500px] h-[500px] rounded-full blur-[100px] pointer-events-none" style={{ background: "rgba(227,170,221,0.15)" }} />
+      <div className="absolute top-[-100px] right-[-100px] w-[500px] h-[500px] rounded-full blur-[100px] pointer-events-none" style={{ background: "rgba(123,92,246,0.15)" }} />
       
       <div className="container mx-auto px-6 relative z-10">
         <div className="reveal py-12 text-center mb-12">
           <div className="inline-flex items-center gap-2 mb-6">
-            <span className="w-10 h-[2px]" style={{ background: "linear-gradient(90deg, #6E3482, transparent)" }} />
-            <span className="text-xs md:text-sm font-semibold uppercase tracking-[0.2em]" style={{ color: "#6E3482" }}>
+            <span className="w-10 h-[2px]" style={{ background: "linear-gradient(90deg, #7B5CF6, transparent)" }} />
+            <span className="text-xs md:text-sm font-semibold uppercase tracking-[0.2em]" style={{ color: "#7B5CF6" }}>
               All your Favourite Templates
             </span>
           </div>
           
           <h2 className="text-4xl md:text-5xl font-bold mb-4 leading-tight" style={{ color: "white", fontFamily: "Syne, sans-serif" }}>
-            Content That Sells <span style={{ color: "#6E3482" }}>Properties.</span>
+            Content That Sells <span style={{ color: "#7B5CF6" }}>Properties.</span>
           </h2>
           
-          <p className="mb-8 max-w-2xl mx-auto" style={{ fontSize: "1.1rem", color: "rgba(196,181,253,0.8)" }}>
+          <p className="mb-8 max-w-2xl mx-auto" style={{ fontSize: "1.1rem", color: "rgba(123,92,246,0.8)" }}>
             Dozens of fully customizable templates in all desi language
           </p>
           
           <button 
             onClick={onEnquiry}
-            className="px-8 py-3 rounded-lg font-semibold transition-all"
+            className="px-8 py-3 rounded-[30px] font-semibold transition-all"
             style={{
               background: "transparent",
-              color: "#6E3482",
-              border: "2px solid rgba(196,181,253,0.4)",
+              color: "#7B5CF6",
+              border: "2px solid rgba(123,92,246,0.4)",
             }}
-            onMouseEnter={(e) => (e.currentTarget.style.background = "rgba(227,170,221,0.1)")}
+            onMouseEnter={(e) => (e.currentTarget.style.background = "rgba(123,92,246,0.1)")}
             onMouseLeave={(e) => (e.currentTarget.style.background = "transparent")}
           >
             Get A Quote
@@ -119,7 +119,7 @@ export function Production({ onEnquiry }: { onEnquiry?: () => void }) {
                   zIndex,
                   opacity,
                   transition: "all 0.5s cubic-bezier(0.25, 1, 0.5, 1)",
-                  boxShadow: isActive ? "0 25px 50px rgba(227,170,221,0.4)" : "0 15px 35px rgba(0,0,0,0.4)",
+                  boxShadow: isActive ? "0 25px 50px rgba(123,92,246,0.4)" : "0 15px 35px rgba(0,0,0,0.4)",
                   willChange: "transform, opacity, z-index"
                 }}
                 onClick={(e) => toggleVideo(index, e)}
@@ -162,9 +162,9 @@ export function Production({ onEnquiry }: { onEnquiry?: () => void }) {
                   </div>
                   <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider backdrop-blur-sm"
                     style={{
-                      background: "rgba(227,170,221,0.25)",
-                      border: "1px solid rgba(227,170,221,0.4)",
-                      color: "#F5EBFA"
+                      background: "rgba(123,92,246,0.25)",
+                      border: "1px solid rgba(123,92,246,0.4)",
+                      color: "#FFFFFF"
                     }}>
                     {video.category}
                   </span>
@@ -191,7 +191,7 @@ export function Production({ onEnquiry }: { onEnquiry?: () => void }) {
             </div>
             <div className="flex flex-col">
               <span className="text-white text-sm font-semibold leading-tight">{activeVideo.title}</span>
-              <span className="text-[#6E3482] text-[0.7rem] font-medium">{activeVideo.category}</span>
+              <span className="text-[#7B5CF6] text-[0.7rem] font-medium">{activeVideo.category}</span>
             </div>
           </div>
 
@@ -209,7 +209,7 @@ export function Production({ onEnquiry }: { onEnquiry?: () => void }) {
       {/* Wave */}
       <div className="absolute bottom-0 left-0 right-0 z-[3] pointer-events-none">
         <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="block w-full h-auto">
-          <path d="M0 60L48 54C96 48 192 36 288 36C384 36 480 48 576 54C672 60 768 60 864 54C960 48 1056 36 1152 30C1248 24 1344 24 1392 24L1440 24V120H1392C1344 120 1248 120 1152 120C1056 120 960 120 864 120C768 120 672 120 576 120C480 120 384 120 288 120C192 120 96 120 48 120H0V60Z" fill="#F5EBFA"/>
+          <path d="M0 60L48 54C96 48 192 36 288 36C384 36 480 48 576 54C672 60 768 60 864 54C960 48 1056 36 1152 30C1248 24 1344 24 1392 24L1440 24V120H1392C1344 120 1248 120 1152 120C1056 120 960 120 864 120C768 120 672 120 576 120C480 120 384 120 288 120C192 120 96 120 48 120H0V60Z" fill="#FFFFFF"/>
         </svg>
       </div>
     </section>

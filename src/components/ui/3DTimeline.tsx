@@ -41,15 +41,15 @@ export function Timeline3D({ steps, onEnquiry }: Timeline3DProps) {
   };
 
   return (
-    <section id="process" className="py-32 md:py-40 relative" style={{ background: "#F5EBFA" }}>
+    <section id="process" className="py-32 md:py-40 relative" style={{ background: "#FFFFFF" }}>
       <div className="container mx-auto px-6 md:px-12">
         <div className="mb-16 text-center">
           <div className="flex items-center justify-center gap-3 mb-6">
-            <span className="w-12 h-[2px] rounded-full" style={{ background: "linear-gradient(90deg, #6E3482, #34D399)" }} />
-            <span className="text-sm font-semibold tracking-[0.2em] uppercase" style={{ color: "#6E3482" }}>Our Process</span>
-            <span className="w-12 h-[2px] rounded-full" style={{ background: "linear-gradient(90deg, #34D399, #6E3482)" }} />
+            <span className="w-12 h-[2px] rounded-full" style={{ background: "linear-gradient(90deg, #7B5CF6, #34D399)" }} />
+            <span className="text-sm font-semibold tracking-[0.2em] uppercase" style={{ color: "#7B5CF6" }}>Our Process</span>
+            <span className="w-12 h-[2px] rounded-full" style={{ background: "linear-gradient(90deg, #34D399, #7B5CF6)" }} />
           </div>
-          <h2 className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold tracking-tight" style={{ color: "#49225B" }}>
+          <h2 className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold tracking-tight" style={{ color: "#1D1D2B" }}>
             How We Generate<br /><span className="gradient-text">High Quality Leads</span>
           </h2>
         </div>
@@ -79,18 +79,18 @@ export function Timeline3D({ steps, onEnquiry }: Timeline3DProps) {
                 }}
               >
                 <motion.div
-                  className="relative p-8 md:p-10 rounded-3xl overflow-hidden h-full transition-all duration-500"
+                  className="relative p-8 md:p-10 rounded-[30px] overflow-hidden h-full transition-all duration-500"
                   style={{
-                    background: step.isDark ? "#49225B" : "#E7DBEF",
-                    border: step.isDark ? "1px solid rgba(227,170,221,0.2)" : "1px solid rgba(227,170,221,0.08)",
+                    background: step.isDark ? "#1D1D2B" : "#F8F7FF",
+                    border: step.isDark ? "1px solid rgba(123,92,246,0.2)" : "1px solid rgba(123,92,246,0.08)",
                     boxShadow: step.isDark
-                      ? "0 4px 30px rgba(0,0,0,0.3), 0 0 40px rgba(227,170,221,0.15)"
-                      : "0 4px 30px rgba(227,170,221,0.05), 0 0 40px rgba(227,170,221,0.08)",
+                      ? "0 4px 30px rgba(0,0,0,0.3), 0 0 40px rgba(123,92,246,0.15)"
+                      : "0 4px 30px rgba(123,92,246,0.05), 0 0 40px rgba(123,92,246,0.08)",
                   }}
                   whileHover={{
                     boxShadow: step.isDark
-                      ? "0 20px 40px rgba(227,170,221,0.3), 0 0 60px rgba(227,170,221,0.25)"
-                      : "0 20px 40px rgba(227,170,221,0.15), 0 0 60px rgba(227,170,221,0.15)",
+                      ? "0 20px 40px rgba(123,92,246,0.3), 0 0 60px rgba(123,92,246,0.25)"
+                      : "0 20px 40px rgba(123,92,246,0.15), 0 0 60px rgba(123,92,246,0.15)",
                   }}
                 >
                   {/* Animated gradient overlay on hover */}
@@ -98,25 +98,25 @@ export function Timeline3D({ steps, onEnquiry }: Timeline3DProps) {
                     className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
                     style={{
                       background: step.isDark
-                        ? "linear-gradient(135deg, rgba(227,170,221,0.1), rgba(52,211,153,0.05))"
-                        : "linear-gradient(135deg, rgba(227,170,221,0.05), rgba(52,211,153,0.02))",
+                        ? "linear-gradient(135deg, rgba(123,92,246,0.1), rgba(52,211,153,0.05))"
+                        : "linear-gradient(135deg, rgba(123,92,246,0.05), rgba(52,211,153,0.02))",
                     }}
                   />
 
                   <div className="relative z-10">
                     {/* Number background */}
-                    <div className="absolute -top-2 -right-1 text-[7rem] font-heading font-bold leading-none pointer-events-none" style={{ color: step.isDark ? "rgba(255,255,255,0.08)" : "rgba(227,170,221,0.05)" }}>
+                    <div className="absolute -top-2 -right-1 text-[7rem] font-heading font-bold leading-none pointer-events-none" style={{ color: step.isDark ? "rgba(255,255,255,0.08)" : "rgba(123,92,246,0.05)" }}>
                       {step.num}
                     </div>
 
                     {/* Icon */}
                     <motion.div
-                      className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6 relative z-20"
+                      className="w-14 h-14 rounded-[30px] flex items-center justify-center mb-6 relative z-20"
                       style={{
                         background: step.isDark
-                          ? "rgba(227,170,221,0.2)"
-                          : "rgba(227,170,221,0.08)",
-                        color: step.isDark ? "#6E3482" : "#6E3482",
+                          ? "rgba(123,92,246,0.2)"
+                          : "rgba(123,92,246,0.08)",
+                        color: step.isDark ? "#7B5CF6" : "#7B5CF6",
                       }}
                       whileHover={{
                         scale: 1.1,
@@ -127,11 +127,11 @@ export function Timeline3D({ steps, onEnquiry }: Timeline3DProps) {
                       {step.icon}
                     </motion.div>
 
-                    <div className="text-xs uppercase tracking-[0.3em] font-semibold mb-3" style={{ color: step.isDark ? "#6E3482" : "#6E3482" }}>
+                    <div className="text-xs uppercase tracking-[0.3em] font-semibold mb-3" style={{ color: step.isDark ? "#7B5CF6" : "#7B5CF6" }}>
                       Step {step.num}
                     </div>
 
-                    <h3 className="text-2xl font-bold mb-6 font-heading" style={{ color: step.isDark ? "#E7DBEF" : "#49225B" }}>
+                    <h3 className="text-2xl font-bold mb-6 font-heading" style={{ color: step.isDark ? "#F8F7FF" : "#1D1D2B" }}>
                       {step.title}
                     </h3>
 
@@ -148,10 +148,10 @@ export function Timeline3D({ steps, onEnquiry }: Timeline3DProps) {
                         >
                           <motion.span
                             className="w-2 h-2 rounded-full flex-shrink-0"
-                            style={{ background: "linear-gradient(135deg, #6E3482, #34D399)" }}
+                            style={{ background: "linear-gradient(135deg, #7B5CF6, #34D399)" }}
                             whileHover={{ scale: 1.5 }}
                           />
-                          <span className="text-sm" style={{ color: step.isDark ? "#6E3482" : "#4B5563" }}>
+                          <span className="text-sm" style={{ color: step.isDark ? "#7B5CF6" : "#4B5563" }}>
                             {item}
                           </span>
                         </motion.li>
@@ -160,7 +160,7 @@ export function Timeline3D({ steps, onEnquiry }: Timeline3DProps) {
                   </div>
 
                   {/* Bottom gradient line on hover */}
-                  <div className="absolute bottom-0 left-0 right-0 h-[2px] scale-x-0 group-hover:scale-x-100 transition-transform duration-700" style={{ background: "linear-gradient(90deg, transparent, #6E3482, transparent)" }} />
+                  <div className="absolute bottom-0 left-0 right-0 h-[2px] scale-x-0 group-hover:scale-x-100 transition-transform duration-700" style={{ background: "linear-gradient(90deg, transparent, #7B5CF6, transparent)" }} />
 
                   {/* 3D connector dots for timeline */}
                   {index !== steps.length - 1 && (
@@ -168,7 +168,7 @@ export function Timeline3D({ steps, onEnquiry }: Timeline3DProps) {
                       className="hidden lg:block absolute -right-4 top-1/2 w-8 h-8 rounded-full bg-gradient-to-br from-purple-500 to-green-500"
                       style={{
                         transform: "translate(50%, -50%)",
-                        boxShadow: "0 0 20px rgba(227,170,221,0.4)",
+                        boxShadow: "0 0 20px rgba(123,92,246,0.4)",
                       }}
                       whileHover={{ scale: 1.2 }}
                     />
@@ -213,7 +213,7 @@ export function Timeline3D({ steps, onEnquiry }: Timeline3DProps) {
         >
           <path
             d="M0 120L60 110C120 100 240 80 360 70C480 60 600 60 720 65C840 70 960 80 1080 85C1200 90 1320 90 1380 90L1440 90V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z"
-            fill="#49225B"
+            fill="#1D1D2B"
           />
         </svg>
       </div>

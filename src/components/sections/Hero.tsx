@@ -54,20 +54,20 @@ export function Hero({ onEnquiry }: { onEnquiry: () => void }) {
   }, []);
 
   return (
-    <section ref={containerRef} className="relative w-full min-h-screen flex items-center overflow-hidden" style={{ background: "linear-gradient(135deg, #F5EBFA 0%, #E7DBEF 50%, #E7DBEF 100%)" }}>
+    <section ref={containerRef} className="relative w-full min-h-screen flex items-center overflow-hidden" style={{ background: "linear-gradient(135deg, #FFFFFF 0%, #F8F7FF 50%, #F8F7FF 100%)" }}>
       {/* Gradient orbs */}
       <div className="absolute inset-0 overflow-hidden">
-        <div ref={orbRef} className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full" style={{ background: "radial-gradient(circle, rgba(227,170,221,0.25) 0%, rgba(109,40,217,0.08) 40%, transparent 70%)", filter: "blur(80px)" }} />
+        <div ref={orbRef} className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full" style={{ background: "radial-gradient(circle, rgba(123,92,246,0.25) 0%, rgba(109,40,217,0.08) 40%, transparent 70%)", filter: "blur(80px)" }} />
         <div className="absolute top-[15%] right-[5%] w-[400px] h-[400px] rounded-full" style={{ background: "radial-gradient(circle, rgba(52,211,153,0.2) 0%, transparent 70%)", filter: "blur(60px)", animation: "float 8s ease-in-out infinite" }} />
-        <div className="absolute bottom-[10%] left-[10%] w-[300px] h-[300px] rounded-full" style={{ background: "radial-gradient(circle, rgba(196,181,253,0.4) 0%, transparent 70%)", filter: "blur(50px)", animation: "float 6s ease-in-out infinite reverse" }} />
+        <div className="absolute bottom-[10%] left-[10%] w-[300px] h-[300px] rounded-full" style={{ background: "radial-gradient(circle, rgba(123,92,246,0.4) 0%, transparent 70%)", filter: "blur(50px)", animation: "float 6s ease-in-out infinite reverse" }} />
         {/* 3D floating shapes */}
-        <div className="absolute top-[25%] right-[20%] w-16 h-16 rounded-2xl rotate-12 opacity-30" style={{ background: "linear-gradient(135deg, #6E3482, #6E3482)", animation: "float 5s ease-in-out infinite", boxShadow: "0 20px 40px rgba(227,170,221,0.3)" }} />
+        <div className="absolute top-[25%] right-[20%] w-16 h-16 rounded-[30px] rotate-12 opacity-30" style={{ background: "linear-gradient(135deg, #7B5CF6, #7B5CF6)", animation: "float 5s ease-in-out infinite", boxShadow: "0 20px 40px rgba(123,92,246,0.3)" }} />
         <div className="absolute bottom-[30%] right-[30%] w-10 h-10 rounded-full opacity-25" style={{ background: "linear-gradient(135deg, #34D399, #10B981)", animation: "floatReverse 7s ease-in-out infinite", boxShadow: "0 15px 30px rgba(52,211,153,0.3)" }} />
-        <div className="absolute top-[65%] left-[8%] w-12 h-12 rounded-xl rotate-45 opacity-20" style={{ background: "linear-gradient(135deg, #6E3482, #6E3482)", animation: "float 9s ease-in-out infinite", boxShadow: "0 15px 30px rgba(227,170,221,0.2)" }} />
+        <div className="absolute top-[65%] left-[8%] w-12 h-12 rounded-[30px] rotate-45 opacity-20" style={{ background: "linear-gradient(135deg, #7B5CF6, #7B5CF6)", animation: "float 9s ease-in-out infinite", boxShadow: "0 15px 30px rgba(123,92,246,0.2)" }} />
       </div>
 
       {/* Dot pattern */}
-      <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: "radial-gradient(circle, #6E3482 1px, transparent 1px)", backgroundSize: "30px 30px" }} />
+      <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: "radial-gradient(circle, #7B5CF6 1px, transparent 1px)", backgroundSize: "30px 30px" }} />
 
       {/* Content */}
       <div className="container mx-auto px-6 md:px-12 relative z-10 pt-28 pb-20">
@@ -75,11 +75,11 @@ export function Hero({ onEnquiry }: { onEnquiry: () => void }) {
           {/* Left */}
           <div className="flex-1 max-w-2xl">
             <div className="hero-label inline-flex items-center gap-3 mb-8 opacity-0">
-              <span className="w-12 h-[2px] rounded-full" style={{ background: "linear-gradient(90deg, #6E3482, #34D399)" }} />
-              <span className="text-sm font-semibold tracking-[0.2em] uppercase" style={{ color: "#6E3482" }}>Real Estate Marketing Agency</span>
+              <span className="w-12 h-[2px] rounded-full" style={{ background: "linear-gradient(90deg, #7B5CF6, #34D399)" }} />
+              <span className="text-sm font-semibold tracking-[0.2em] uppercase" style={{ color: "#7B5CF6" }}>Real Estate Marketing Agency</span>
             </div>
 
-            <h1 className="hero-heading-1 text-5xl md:text-7xl lg:text-[5.5rem] font-heading font-bold leading-[0.95] tracking-tight mb-2 opacity-0" style={{ color: "#49225B" }}>
+            <h1 className="hero-heading-1 text-5xl md:text-7xl lg:text-[5.5rem] font-heading font-bold leading-[0.95] tracking-tight mb-2 opacity-0" style={{ color: "#1D1D2B" }}>
               HELLO REALTORS,
             </h1>
             <h1 className="hero-heading-2 text-5xl md:text-7xl lg:text-[5.5rem] font-heading font-bold leading-[0.95] tracking-tight mb-8 opacity-0">
@@ -112,8 +112,8 @@ export function Hero({ onEnquiry }: { onEnquiry: () => void }) {
 
           {/* Right - 3D card */}
           <div className="flex-1 flex justify-center hero-3d-card opacity-0" style={{ perspective: "1000px" }}>
-            <div className="relative w-[320px] md:w-[380px] rounded-3xl overflow-hidden" style={{ boxShadow: "0 30px 80px rgba(227,170,221,0.2), 0 0 0 1px rgba(227,170,221,0.08)", transform: "perspective(1000px) rotateY(-5deg) rotateX(3deg)", transition: "transform 0.3s ease-out" }}>
-              <div className="p-8" style={{ background: "linear-gradient(160deg, #49225B 0%, #312E81 100%)" }}>
+            <div className="relative w-[320px] md:w-[380px] rounded-[30px] overflow-hidden" style={{ boxShadow: "0 30px 80px rgba(123,92,246,0.2), 0 0 0 1px rgba(123,92,246,0.08)", transform: "perspective(1000px) rotateY(-5deg) rotateX(3deg)", transition: "transform 0.3s ease-out" }}>
+              <div className="p-8" style={{ background: "linear-gradient(160deg, #1D1D2B 0%, #312E81 100%)" }}>
                 <div className="flex items-center gap-3 mb-8">
                   <div className="w-3 h-3 rounded-full" style={{ background: "#F87171" }} />
                   <div className="w-3 h-3 rounded-full" style={{ background: "#FBBF24" }} />
@@ -121,8 +121,8 @@ export function Hero({ onEnquiry }: { onEnquiry: () => void }) {
                 </div>
                 <div className="space-y-4">
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: "rgba(227,170,221,0.2)" }}>
-                      <svg className="w-5 h-5" style={{ color: "#6E3482" }} fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>
+                    <div className="w-10 h-10 rounded-[30px] flex items-center justify-center" style={{ background: "rgba(123,92,246,0.2)" }}>
+                      <svg className="w-5 h-5" style={{ color: "#7B5CF6" }} fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>
                     </div>
                     <div>
                       <p className="text-xs" style={{ color: "#A5B4FC" }}>Total Leads</p>
@@ -139,7 +139,7 @@ export function Hero({ onEnquiry }: { onEnquiry: () => void }) {
                   {/* Mini chart bars */}
                   <div className="flex items-end gap-2 h-20 pt-2">
                     {[35, 55, 40, 70, 50, 85, 65, 90, 75, 95, 80, 100].map((h, i) => (
-                      <div key={i} className="flex-1 rounded-t-sm transition-all" style={{ height: `${h}%`, background: i >= 9 ? "linear-gradient(to top, #6E3482, #6E3482)" : "rgba(227,170,221,0.2)" }} />
+                      <div key={i} className="flex-1 rounded-t-sm transition-all" style={{ height: `${h}%`, background: i >= 9 ? "linear-gradient(to top, #7B5CF6, #7B5CF6)" : "rgba(123,92,246,0.2)" }} />
                     ))}
                   </div>
                   <p className="text-xs text-center" style={{ color: "#A5B4FC" }}>Last 12 Months Performance</p>
@@ -153,7 +153,7 @@ export function Hero({ onEnquiry }: { onEnquiry: () => void }) {
       {/* Bottom wave */}
       <div className="absolute bottom-0 left-0 right-0">
         <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full">
-          <path d="M0 120L60 110C120 100 240 80 360 70C480 60 600 60 720 65C840 70 960 80 1080 85C1200 90 1320 90 1380 90L1440 90V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z" fill="#E7DBEF"/>
+          <path d="M0 120L60 110C120 100 240 80 360 70C480 60 600 60 720 65C840 70 960 80 1080 85C1200 90 1320 90 1380 90L1440 90V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z" fill="#F8F7FF"/>
         </svg>
       </div>
     </section>

@@ -21,7 +21,7 @@ const TwitterIcon = () => (
 
 export function Footer() {
   return (
-    <footer className="pt-24 pb-12 relative" style={{ background: "#F5EBFA", borderTop: "1px solid rgba(227,170,221,0.08)" }}>
+    <footer className="pt-24 pb-12 relative" style={{ background: "#FFFFFF", borderTop: "1px solid rgba(123,92,246,0.08)" }}>
       <div className="container mx-auto px-6 md:px-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
 
@@ -35,7 +35,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="font-bold mb-6 text-xs uppercase tracking-[0.2em]" style={{ color: "#49225B" }}>Quick Links</h4>
+            <h4 className="font-bold mb-6 text-xs uppercase tracking-[0.2em]" style={{ color: "#1D1D2B" }}>Quick Links</h4>
             <ul className="space-y-4">
               {["Home", "Case Studies", "Services", "Contact"].map((link) => (
                 <li key={link}><a href="#" className="text-sm hover:text-purple transition-colors" style={{ color: "#4B5563" }}>{link}</a></li>
@@ -44,7 +44,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="font-bold mb-6 text-xs uppercase tracking-[0.2em]" style={{ color: "#49225B" }}>Services</h4>
+            <h4 className="font-bold mb-6 text-xs uppercase tracking-[0.2em]" style={{ color: "#1D1D2B" }}>Services</h4>
             <ul className="space-y-4">
               {["Lead Generation", "Content Production", "Website Development", "Automation"].map((link) => (
                 <li key={link}><a href="#" className="text-sm hover:text-purple transition-colors" style={{ color: "#4B5563" }}>{link}</a></li>
@@ -53,22 +53,22 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="font-bold mb-6 text-xs uppercase tracking-[0.2em]" style={{ color: "#49225B" }}>Connect</h4>
+            <h4 className="font-bold mb-6 text-xs uppercase tracking-[0.2em]" style={{ color: "#1D1D2B" }}>Connect</h4>
             <div className="flex space-x-3 mb-8">
               {[<InstagramIcon key="ig" />, <FacebookIcon key="fb" />, <LinkedinIcon key="li" />, <TwitterIcon key="tw" />].map((icon, i) => (
-                <a key={i} href="#" className="w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300 hover:scale-110" style={{ background: "rgba(227,170,221,0.06)", color: "#6E3482", border: "1px solid rgba(227,170,221,0.08)" }}>
+                <a key={i} href="#" className="w-10 h-10 rounded-[30px] flex items-center justify-center transition-all duration-300 hover:scale-110" style={{ background: "rgba(123,92,246,0.06)", color: "#7B5CF6", border: "1px solid rgba(123,92,246,0.08)" }}>
                   {icon}
                 </a>
               ))}
             </div>
-            <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-bold text-white transition-all duration-300 hover:opacity-90" style={{ background: "#25D366" }}>
+            <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-6 py-3 rounded-[30px] text-sm font-bold text-white transition-all duration-300 hover:opacity-90" style={{ background: "#25D366" }}>
               <MessageCircle className="w-4 h-4" />
               Chat on WhatsApp
             </a>
           </div>
         </div>
 
-        <div className="pt-8 flex flex-col md:flex-row justify-between items-center text-xs" style={{ borderTop: "1px solid rgba(227,170,221,0.06)", color: "#4B5563" }}>
+        <div className="pt-8 flex flex-col md:flex-row justify-between items-center text-xs" style={{ borderTop: "1px solid rgba(123,92,246,0.06)", color: "#4B5563" }}>
           <p>&copy; {new Date().getFullYear()} Realtor Guide. All rights reserved.</p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <Link href="/privacy-policy" className="hover:text-purple transition-colors">Privacy Policy</Link>

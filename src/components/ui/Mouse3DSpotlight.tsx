@@ -41,8 +41,8 @@ export function Mouse3DSpotlight() {
       <div
         className="w-[400px] h-[400px] rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"
         style={{
-          background: "radial-gradient(circle, rgba(227,170,221,0.3) 0%, rgba(227,170,221,0.1) 40%, transparent 70%)",
-          boxShadow: "0 0 100px 50px rgba(227,170,221,0.2)",
+          background: "radial-gradient(circle, rgba(123,92,246,0.3) 0%, rgba(123,92,246,0.1) 40%, transparent 70%)",
+          boxShadow: "0 0 100px 50px rgba(123,92,246,0.2)",
         }}
       />
     </motion.div>

@@ -1,14 +1,14 @@
 @import "tailwindcss";
 
 @theme {
-  --color-bg-primary: #F4E7F8;
-  --color-bg-secondary: #F2DDDC;
-  --color-bg-accent: #C8A8E9;
-  --color-bg-card: #F2DDDC;
-  --color-purple-light: #E3AADD;
-  --color-purple: #E3AADD;
-  --color-purple-dark: #C8A8E9;
-  --color-purple-deep: #C3C7F4;
+  --color-bg-primary: #FFFFFF;
+  --color-bg-secondary: #F8F7FF;
+  --color-bg-accent: #A78BFA;
+  --color-bg-card: #F8F7FF;
+  --color-purple-light: #7B5CF6;
+  --color-purple: #7B5CF6;
+  --color-purple-dark: #A78BFA;
+  --color-purple-deep: #A78BFA;
   --color-green-accent: #34D399;
   --color-green-light: #D1FAE5;
   --color-text-primary: #1E1B4B;
@@ -16,12 +16,12 @@
   --color-text-muted: #6B7280;
 
   --font-sans: var(--font-inter);
-  --font-heading: var(--font-syne);
+  --font-heading: var(--font-inter);
 }
 
 @layer base {
   :root {
-    --background: #F4E7F8;
+    --background: #FFFFFF;
     --foreground: #1E1B4B;
   }
 }
@@ -29,8 +29,8 @@
 /* Custom Scrollbar */
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: #F4E7F8; }
-::-webkit-scrollbar-thumb { background: #C8A8E9; border-radius: 3px; }
-::-webkit-scrollbar-thumb:hover { background: #E3AADD; }
+::-webkit-scrollbar-thumb { background: #A78BFA; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #7B5CF6; }
 
 html { scroll-behavior: smooth; }
 
@@ -43,9 +43,9 @@ body {
 
 /* Purple Gradient Text */
 .gradient-text {
-  background: linear-gradient(135deg, #F6BCBA, #E3AADD, #C8A8E9, #C3C7F4);
+  background: linear-gradient(90deg, #5A3AE2, #4022B8);
   background-size: 200% 200%;
-  animation: sunsetGradient 5s ease infinite;
+  
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -101,10 +101,10 @@ body {
 
 /* Premium Buttons */
 .btn-primary {
-  background: linear-gradient(135deg, #F6BCBA, #E3AADD, #C8A8E9, #C3C7F4);
+  background: #5A3AE2; border-radius: 30px;
   background-size: 200% 200%;
-  animation: sunsetGradient 5s ease infinite;
-  color: #1E1B4B;
+  
+  color: #FFFFFF;
   font-weight: 700;
   letter-spacing: 0.05em;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -124,7 +124,7 @@ body {
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .btn-secondary:hover {
-  border-color: #E3AADD;
+  border-color: #7B5CF6;
   background: rgba(139, 92, 246, 0.05);
   box-shadow: 0 8px 30px rgba(139, 92, 246, 0.1);
 }

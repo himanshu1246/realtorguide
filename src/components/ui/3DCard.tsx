@@ -61,15 +61,15 @@ export function Card3D({ children, className = "", isDark = false }: Card3DProps
         style={{
           transformStyle: "preserve-3d",
           background: isDark
-            ? "linear-gradient(135deg, #49225B 0%, #0f0f1b 100%)"
-            : "linear-gradient(135deg, #E7DBEF 0%, #F5F3FF 100%)",
+            ? "linear-gradient(135deg, #1D1D2B 0%, #0f0f1b 100%)"
+            : "linear-gradient(135deg, #F8F7FF 0%, #F5F3FF 100%)",
         }}
       >
         {children}
 
         {/* Shine effect */}
         <motion.div
-          className="absolute inset-0 pointer-events-none rounded-3xl opacity-0"
+          className="absolute inset-0 pointer-events-none rounded-[30px] opacity-0"
           style={{
             background: `radial-gradient(circle 600px at ${shine.x}px ${shine.y}px, rgba(255,255,255,0.15), transparent 80%)`,
           }}

@@ -60,7 +60,7 @@ export default function PrivacyPolicy() {
           <section>
             <h2 className="text-2xl font-bold mb-4" style={{ color: "#1E1B4B", fontFamily: "var(--font-syne)" }}>7. Contact Us</h2>
             <p style={{ color: "#4B5563", lineHeight: "1.8" }}>If you have questions about this Privacy Policy, please contact us at:</p>
-            <div className="mt-4 p-6 rounded-2xl" style={{ background: "#FFFFFF", border: "1px solid rgba(139,92,246,0.1)" }}>
+            <div className="mt-4 p-6 rounded-[30px]" style={{ background: "#FFFFFF", border: "1px solid rgba(139,92,246,0.1)" }}>
               <p className="font-bold" style={{ color: "#1E1B4B" }}>Realtor Guide</p>
               <p style={{ color: "#4B5563" }}>Email: hello@realtorguide.com</p>
               <p style={{ color: "#4B5563" }}>Phone: +91 98765 43210</p>

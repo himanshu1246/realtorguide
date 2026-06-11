@@ -32,8 +32,8 @@ export function Navbar({ onEnquiry }: { onEnquiry: () => void }) {
           background: scrolled ? "rgba(248,246,255,0.85)" : "transparent",
           backdropFilter: scrolled ? "blur(20px)" : "none",
           WebkitBackdropFilter: scrolled ? "blur(20px)" : "none",
-          borderBottom: scrolled ? "1px solid rgba(227,170,221,0.08)" : "1px solid transparent",
-          boxShadow: scrolled ? "0 4px 30px rgba(227,170,221,0.06)" : "none",
+          borderBottom: scrolled ? "1px solid rgba(123,92,246,0.08)" : "1px solid transparent",
+          boxShadow: scrolled ? "0 4px 30px rgba(123,92,246,0.06)" : "none",
         }}
       >
         <div className="container mx-auto px-6 md:px-12">
@@ -68,10 +68,10 @@ export function Navbar({ onEnquiry }: { onEnquiry: () => void }) {
             <div className="flex items-center gap-4">
               <button
                 onClick={onEnquiry}
-                className="hidden sm:inline-flex items-center px-6 py-2.5 rounded-full text-sm font-bold text-white transition-all duration-300 hover:shadow-lg"
+                className="hidden sm:inline-flex items-center px-5 py-2 rounded-full text-xs font-bold text-white transition-all duration-300 hover:shadow-lg"
                 style={{
-                  background: "linear-gradient(135deg, #6E3482, #6E3482)",
-                  boxShadow: "0 4px 15px rgba(227,170,221,0.3)",
+                  background: "linear-gradient(135deg, #7B5CF6, #7B5CF6)",
+                  boxShadow: "0 4px 15px rgba(123,92,246,0.3)",
                 }}
               >
                 Enquire Now
@@ -80,8 +80,8 @@ export function Navbar({ onEnquiry }: { onEnquiry: () => void }) {
               {/* Mobile hamburger */}
               <button
                 onClick={() => setMobileOpen(!mobileOpen)}
-                className="lg:hidden w-10 h-10 rounded-xl flex items-center justify-center transition-all"
-                style={{ background: "rgba(227,170,221,0.06)", color: "#6E3482" }}
+                className="lg:hidden w-10 h-10 rounded-[30px] flex items-center justify-center transition-all"
+                style={{ background: "rgba(123,92,246,0.06)", color: "#7B5CF6" }}
               >
                 {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
               </button>
@@ -101,7 +101,7 @@ export function Navbar({ onEnquiry }: { onEnquiry: () => void }) {
                   href={link.href}
                   onClick={() => setMobileOpen(false)}
                   className="text-2xl font-bold py-4 border-b transition-colors hover:text-purple"
-                  style={{ color: "#49225B", borderColor: "rgba(227,170,221,0.08)" }}
+                  style={{ color: "#1D1D2B", borderColor: "rgba(123,92,246,0.08)" }}
                 >
                   {link.label}
                 </a>
@@ -109,8 +109,8 @@ export function Navbar({ onEnquiry }: { onEnquiry: () => void }) {
             </div>
             <button
               onClick={() => { setMobileOpen(false); onEnquiry(); }}
-              className="w-full mt-8 py-4 rounded-xl text-sm uppercase tracking-widest font-bold text-white"
-              style={{ background: "linear-gradient(135deg, #6E3482, #6E3482)", boxShadow: "0 8px 25px rgba(227,170,221,0.3)" }}
+              className="w-full mt-8 py-3 rounded-[30px] text-xs uppercase tracking-widest font-bold text-white"
+              style={{ background: "linear-gradient(135deg, #7B5CF6, #7B5CF6)", boxShadow: "0 8px 25px rgba(123,92,246,0.3)" }}
             >
               Enquire Now
             </button>
