@@ -553,10 +553,10 @@ body { font-family:"Inter",sans-serif; color:#111; background:#FFFFFF; line-heig
   padding: 20px 0 60px 0;
 }
 .testimonials-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: flex;
   gap: 24px;
-  width: 100%;
+  width: max-content;
+  animation: scrollMarquee 25s linear infinite;
 }
 .testimonials-grid:hover {
   /* maybe pause on hover? No, user explicitly said "when he click on play button the moving should stop" */
