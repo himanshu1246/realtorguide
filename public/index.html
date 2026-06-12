@@ -1085,87 +1085,15 @@ body { background-color: #FFFFFF; color: #111; font-size: 17px; font-weight: 500
     <div class="production-header reveal" style="text-align:center;">
       <div class="section-label" style="justify-content:center; width:100%;"><span class="line"></span> Video Production</div>
       <h2 class="section-heading production-heading"><span class="gradient-text">Real Estate Content Production House</span></h2>
-      <p class="production-note" style="font-size: 1.1rem; color: rgba(196,181,253,0.8); max-width: 600px; margin: 16px auto 32px;">Dozens of fully customizable templates in all desi language</p>
+      
       <button class="btn-secondary-light" onclick="openModal()">Get A Quote</button>
     </div>
   </div>
-  <div class="video-carousel-wrapper">
-    <div class="video-carousel" id="videoCarousel">
+  
+  <div class="clients-marquee-wrapper" style="overflow: hidden; width: 100vw; margin-left: calc(-50vw + 50%); position: relative; margin-top: 40px; margin-bottom: 80px; -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);">
+    <div class="clients-marquee-track" id="videoCarousel" style="display: flex; gap: 24px; width: max-content; animation: scrollMarquee 35s linear infinite;">
       <!-- Video cards injected by JS -->
     </div>
-    
-    <div class="video-controls-bar" id="videoControls">
-      <button class="video-controls-btn" id="prevBtn" onclick="navCarousel(-1)">
-        <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"></polyline></svg>
-      </button>
-      <div class="video-controls-info">
-        <div class="video-controls-thumb">
-          <video id="controlThumb" src="" muted loop playsinline></video>
-        </div>
-        <div class="video-controls-text">
-          <div class="video-controls-title" id="controlTitle">Ali Abdal</div>
-          <div class="video-controls-cat" id="controlCat">Fully customizable</div>
-        </div>
-      </div>
-      <button class="video-controls-btn" id="nextBtn" onclick="navCarousel(1)">
-        <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
-      </button>
-    </div>
-  </div>
-  <div class="section-wave">
-    <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M0 60L48 54C96 48 192 36 288 36C384 36 480 48 576 54C672 60 768 60 864 54C960 48 1056 36 1152 30C1248 24 1344 24 1392 24L1440 24V120H1392C1344 120 1248 120 1152 120C1056 120 960 120 864 120C768 120 672 120 576 120C480 120 384 120 288 120C192 120 96 120 48 120H0V60Z" fill="#FFFFFF"/>
-    </svg>
-  </div>
-</section>
-
-<!-- ===== PROCESS ===== -->
-<section class="process" id="process">
-  <div class="container">
-    <div class="process-header reveal">
-      <div class="section-label section-label-center"><span class="line line-left"></span> Our Process <span class="line line-right"></span></div>
-      <h2 class="section-heading process-heading">How We Generate <span class="gradient-text">High Quality Leads</span></h2>
-    </div>
-    <div class="process-grid" id="processGrid">
-      <!-- Cards injected by JS -->
-    </div>
-    <div class="process-cta reveal">
-      <button class="btn-primary" onclick="openModal()">Start Your Project</button>
-    </div>
-  </div>
-  <div class="section-wave">
-    <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M0 60L48 54C96 48 192 36 288 36C384 36 480 48 576 54C672 60 768 60 864 54C960 48 1056 36 1152 30C1248 24 1344 24 1392 24L1440 24V120H1392C1344 120 1248 120 1152 120C1056 120 960 120 864 120C768 120 672 120 576 120C480 120 384 120 288 120C192 120 96 120 48 120H0V60Z" fill="#FFFFFF"/>
-    </svg>
-  </div>
-</section>
-
-<!-- ===== TESTIMONIALS ===== -->
-<section class="testimonials" id="testimonials">
-  <div class="testimonials-glow"></div>
-  <div class="container">
-    <div class="testimonials-header reveal">
-      <div class="section-label section-label-center" style="color:#7B5CF6;">
-        <span class="line line-left" style="background:linear-gradient(90deg,transparent,#A78BFA);"></span>
-        Testimonials
-        <span class="line line-right" style="background:linear-gradient(90deg,#A78BFA,transparent);"></span>
-      </div>
-      <h2 class="section-heading testimonials-heading">What Our Clients <span>Say</span></h2>
-      <p class="testimonials-subtext">Hear from real estate professionals who transformed their business with our marketing systems.</p>
-    </div>
-    <div class="testimonials-marquee-container">
-      <div class="testimonials-grid" id="testimonialsGrid">
-      <!-- Cards injected by JS -->
-      </div>
-    </div>
-    <div class="testimonials-cta reveal">
-      <button class="btn-secondary-light" onclick="openModal()">Share Your Story</button>
-    </div>
-  </div>
-  <div class="section-wave">
-    <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M0 60L48 54C96 48 192 36 288 36C384 36 480 48 576 54C672 60 768 60 864 54C960 48 1056 36 1152 30C1248 24 1344 24 1392 24L1440 24V120H1392C1344 120 1248 120 1152 120C1056 120 960 120 864 120C768 120 672 120 576 120C480 120 384 120 288 120C192 120 96 120 48 120H0V60Z" fill="#FFFFFF"/>
-    </svg>
   </div>
 </section>
 
@@ -1386,7 +1314,10 @@ const videosData = [
   { src:'PRODUCTION SHOWCASE/number 2.mp4', title:'Luxury Villa Tour', category:'Real Estate' },
   { src:'PRODUCTION SHOWCASE/number 3.mp4', title:'City Apartment', category:'Cinematic' },
   { src:'PRODUCTION SHOWCASE/number 4.MP4', title:'Modern Estate', category:'Walkthrough' },
-  { src:'PRODUCTION SHOWCASE/number 5.mp4', title:'Penthouse View', category:'Lifestyle' }
+  { src:'PRODUCTION SHOWCASE/number 5.mp4', title:'Penthouse View', category:'Lifestyle' },
+  { src:'PRODUCTION SHOWCASE/number 6.mp4', title:'Premium Villa', category:'Real Estate' },
+  { src:'PRODUCTION SHOWCASE/number 7.mp4', title:'Urban Loft', category:'Cinematic' },
+  { src:'PRODUCTION SHOWCASE/number 8.mp4', title:'Estate Tour', category:'Walkthrough' }
 ];
 
 const processData = [
@@ -1467,135 +1398,56 @@ const testimonialsData = [
 })();
 
 
-// Videos Coverflow Logic
-let activeVideoIndex = 0;
-let carouselCards = [];
-
-function updateCarousel() {
-  carouselCards.forEach((card, index) => {
-    const diff = index - activeVideoIndex;
-    let translateX = 0;
-    let scale = 1;
-    let zIndex = 10;
-    let opacity = 1;
-
-    if (diff === 0) {
-      translateX = 0;
-      scale = 1;
-      zIndex = 10;
-      opacity = 1;
-      card.classList.add('active-card');
-    } else {
-      card.classList.remove('active-card');
-      const absDiff = Math.abs(diff);
-      const direction = diff > 0 ? 1 : -1;
-      
-      // Calculate smooth coverflow positions
-      // Item 1: 160px, scale 0.85
-      // Item 2: 280px, scale 0.7
-      // Item 3: 380px, scale 0.55
-      translateX = direction * (180 + (absDiff > 1 ? (absDiff - 1) * 140 : 0));
-      scale = 1 - (absDiff * 0.15);
-      zIndex = 10 - absDiff;
-      opacity = 1 - (absDiff * 0.2);
-    }
-
-    card.style.transform = `translateX(${translateX}px) scale(${scale})`;
-    card.style.zIndex = zIndex;
-    card.style.opacity = opacity;
-  });
-
-  // Update control bar
-  const activeVideo = videosData[activeVideoIndex];
-  if (activeVideo) {
-    document.getElementById('controlTitle').innerText = activeVideo.title;
-    document.getElementById('controlCat').innerText = activeVideo.category;
-    const thumb = document.getElementById('controlThumb');
-    thumb.src = activeVideo.src;
-  }
-}
-
-window.navCarousel = function(direction) {
-  const newIndex = activeVideoIndex + direction;
-  if (newIndex >= 0 && newIndex < videosData.length) {
-    activeVideoIndex = newIndex;
-    updateCarousel();
-    pauseAllVideos();
-  }
-};
-
-function pauseAllVideos() {
-  document.querySelectorAll('.video-card video').forEach(v => {
-    v.pause();
-    v.parentElement.classList.remove('playing');
-  });
-}
-
-(function initCarousel(){
+// Videos Marquee Logic
+(function renderVideos(){
   const carousel = document.getElementById('videoCarousel');
-  carousel.innerHTML = ''; // Clear existing
+  if(!carousel) return;
+  carousel.innerHTML = '';
   
-  activeVideoIndex = Math.floor(videosData.length / 2); // Start in middle
+  carousel.addEventListener('mouseenter', () => carousel.style.animationPlayState = 'paused');
+  carousel.addEventListener('mouseleave', () => carousel.style.animationPlayState = 'running');
 
-  videosData.forEach((v, i)=>{
-    const div = document.createElement('div');
-    div.className = 'video-card reveal';
-    div.innerHTML = `
-      <video src="${v.src}" loop playsinline preload="metadata" muted></video>
-      <div class="video-play-btn">
-        <svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+  let cardsHTML = '';
+  videosData.forEach((vid, i) => {
+    cardsHTML += `
+      <div class="video-card" onclick="toggleProductionVideo(this, event)" style="width: 320px; flex-shrink: 0; position: relative;">
+        <video src="${vid.src}" playsinline preload="metadata" style="width:100%; height:100%; object-fit:cover; border-radius:24px;"></video>
+        <div class="video-overlay" style="position:absolute; inset:0; background:rgba(0,0,0,0.4); display:flex; flex-direction:column; justify-content:center; align-items:center; border-radius:24px; transition:0.3s; z-index:2;">
+          <div class="play-btn" style="width:60px; height:60px; border-radius:50%; background:rgba(255,255,255,0.2); backdrop-filter:blur(4px); display:flex; align-items:center; justify-content:center; transition:0.3s;">
+            <svg viewBox="0 0 24 24" style="width:24px; height:24px; fill:#fff; margin-left:4px;"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+        </div>
+        <div class="video-info" style="position:absolute; bottom:20px; left:20px; right:20px; z-index:3;">
+          <h3 style="color:#fff; font-size:1.2rem; font-weight:700; margin-bottom:8px;">${vid.title}</h3>
+          <span class="badge" style="background:rgba(255,255,255,0.2); color:#fff; padding:4px 12px; border-radius:20px; font-size:0.8rem; backdrop-filter:blur(4px);">${vid.category}</span>
+        </div>
       </div>
-      <div class="video-overlay">
-        <div class="video-title">${v.title}</div>
-        <div class="video-category">${v.category}</div>
-      </div>`;
-    
-    div.onclick = (e) => window.toggleKalakarVideo(div, i, e);
-    carousel.appendChild(div);
+    `;
   });
   
-  carouselCards = document.querySelectorAll('.video-card');
-  updateCarousel();
+  carousel.innerHTML = cardsHTML + cardsHTML; // Duplicate for endless scroll
 })();
 
-window.toggleKalakarVideo = function(card, index, event) {
-  if (index !== activeVideoIndex) {
-    activeVideoIndex = index;
-    updateCarousel();
-    pauseAllVideos();
-    return;
-  }
-
+window.toggleProductionVideo = function(card, e) {
+  if(e) e.stopPropagation();
   const video = card.querySelector('video');
-  const carousel = card.parentElement;
-  if (video.paused) {
-    pauseAllVideos();
-    video.play();
+  const overlay = card.querySelector('.video-overlay');
+  
+  if(video.paused) {
+    document.querySelectorAll('.video-card').forEach(c => {
+      if(c !== card) {
+        c.querySelector('video').pause();
+        c.querySelector('.video-overlay').style.opacity = '1';
+      }
+    });
     video.muted = false;
-    card.classList.add('playing');
+    video.play();
+    overlay.style.opacity = '0';
   } else {
     video.pause();
-    card.classList.remove('playing');
+    overlay.style.opacity = '1';
   }
 };
-
-// Process
-(function renderProcess(){
-  const grid = document.getElementById('processGrid');
-  processData.forEach((p,i)=>{
-    const cls = p.dark ? 'process-card-dark' : 'process-card-light';
-    grid.innerHTML += `
-      <div class="process-card ${cls} reveal">
-        
-        <div class="process-card-icon">${p.icon}</div>
-        
-        <div class="process-card-title">${p.title}</div>
-        <ul class="process-card-list">
-          ${p.items.map(it=>`<li><span class="dot"></span>${it}</li>`).join('')}
-        </ul>
-      </div>`;
-  });
-})();
 
 // Services
 (function renderServices(){
