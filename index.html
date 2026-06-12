@@ -1439,16 +1439,6 @@ const caseStudiesDataNew = [
   const carousel = document.getElementById('videoCarousel');
   if(!carousel) return;
   carousel.innerHTML = '';
-  
-  carousel.addEventListener('mouseenter', () => {
-    carousel.style.animationPlayState = 'paused';
-  });
-  carousel.addEventListener('mouseleave', () => {
-    const isPlaying = Array.from(carousel.querySelectorAll('video')).some(v => !v.paused);
-    if (!isPlaying) {
-      carousel.style.animationPlayState = 'running';
-    }
-  });
 
   let cardsHTML = '';
   videosData.forEach((vid, i) => {
@@ -1516,16 +1506,6 @@ window.toggleProductionVideo = function(card, e) {
   const grid = document.getElementById('testimonialsGrid');
   if(!grid) return;
   grid.innerHTML = '';
-  
-  grid.addEventListener('mouseenter', () => {
-    grid.style.animationPlayState = 'paused';
-  });
-  grid.addEventListener('mouseleave', () => {
-    const isPlaying = Array.from(grid.querySelectorAll('video')).some(v => !v.paused);
-    if (!isPlaying) {
-      grid.style.animationPlayState = 'running';
-    }
-  });
 
   const marqueeData = [...testimonialsData, ...testimonialsData]; // Duplicate once for seamless loop
   let cardsHTML = '';
