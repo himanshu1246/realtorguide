@@ -2,27 +2,7 @@
 <html lang="en">
 <head>
 
-<script>
-  // Local file viewing fix: prepend 'public/' to asset paths when opened directly via file:/// in Chrome
-  window.isLocalFile = (window.location.protocol === 'file:' && window.location.pathname.indexOf('/public/index.html') === -1);
-  
-  // Fix already-rendered images as soon as DOM is interactive
-  document.addEventListener('DOMContentLoaded', function() {
-    if (!window.isLocalFile) return;
-    document.querySelectorAll('img[src]').forEach(function(img) {
-      var s = img.getAttribute('src');
-      if (s && !s.startsWith('http') && !s.startsWith('data:') && !s.startsWith('public/')) {
-        img.setAttribute('src', 'public/' + s);
-      }
-    });
-    document.querySelectorAll('video[src]').forEach(function(v) {
-      var s = v.getAttribute('src');
-      if (s && !s.startsWith('http') && !s.startsWith('public/')) {
-        v.setAttribute('src', 'public/' + s);
-      }
-    });
-  });
-</script>
+<!-- local path fix: paths hardcoded with public/ prefix -->
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -977,7 +957,7 @@ body { background-color: #FFFFFF; color: #111; font-size: 17px; font-weight: 500
 <!-- ===== NAVBAR ===== -->
 <nav class="navbar" id="navbar">
   <div class="container">
-    <a href="#" class="navbar-logo"><img src="logo.png" onerror="if(!this.dataset.retried){this.dataset.retried=1;this.src='public/logo.png';}" alt="Realtor Guide"></a>
+    <a href="#" class="navbar-logo"><img src="public/logo.png" alt="Realtor Guide"></a>
     <ul class="navbar-links">
       <li><a href="#hero">Home</a></li>
       <li><a href="#clients">Clients</a></li>
@@ -1250,7 +1230,7 @@ body { background-color: #FFFFFF; color: #111; font-size: 17px; font-weight: 500
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <img src="logo.png" onerror="if(!this.dataset.retried){this.dataset.retried=1;this.src='public/logo.png';}" alt="Realtor Guide">
+        <img src="public/logo.png" alt="Realtor Guide">
         <p class="footer-brand-desc">India's leading real estate marketing agency. We help developers and brokers generate high-quality leads that convert into sales.</p>
       </div>
       <div class="footer-col">
@@ -1351,14 +1331,14 @@ const clientsData = [
 ];
 
 const videosData = [
-  { src:'PRODUCTION SHOWCASE/number 1.mp4', title:'Ali Abdal', category:'Fully customizable' },
-  { src:'PRODUCTION SHOWCASE/number 2.mp4', title:'Luxury Villa Tour', category:'Real Estate' },
-  { src:'PRODUCTION SHOWCASE/number 3.mp4', title:'City Apartment', category:'Cinematic' },
-  { src:'PRODUCTION SHOWCASE/number 4.MP4', title:'Modern Estate', category:'Walkthrough' },
-  { src:'PRODUCTION SHOWCASE/number 5.mp4', title:'Penthouse View', category:'Lifestyle' },
-  { src:'PRODUCTION SHOWCASE/number 6.mp4', title:'Premium Villa', category:'Real Estate' },
-  { src:'PRODUCTION SHOWCASE/number 7.mp4', title:'Urban Loft', category:'Cinematic' },
-  { src:'PRODUCTION SHOWCASE/number 8.mp4', title:'Estate Tour', category:'Walkthrough' }
+  { src:'public/PRODUCTION SHOWCASE/number 1.mp4', title:'Ali Abdal', category:'Fully customizable' },
+  { src:'public/PRODUCTION SHOWCASE/number 2.mp4', title:'Luxury Villa Tour', category:'Real Estate' },
+  { src:'public/PRODUCTION SHOWCASE/number 3.mp4', title:'City Apartment', category:'Cinematic' },
+  { src:'public/PRODUCTION SHOWCASE/number 4.MP4', title:'Modern Estate', category:'Walkthrough' },
+  { src:'public/PRODUCTION SHOWCASE/number 5.mp4', title:'Penthouse View', category:'Lifestyle' },
+  { src:'public/PRODUCTION SHOWCASE/number 6.mp4', title:'Premium Villa', category:'Real Estate' },
+  { src:'public/PRODUCTION SHOWCASE/number 7.mp4', title:'Urban Loft', category:'Cinematic' },
+  { src:'public/PRODUCTION SHOWCASE/number 8.mp4', title:'Estate Tour', category:'Walkthrough' }
 ];
 
 const processData = [
@@ -1406,64 +1386,30 @@ const servicesData = [
 ];
 
 const testimonialsData = [
-  { video:'CLIENT TESTIMONIALS/Client Testimonials video 1.mp4', name:'Happy Client', role:'Real Estate Developer', initial:'H',
+  { video:'public/CLIENT TESTIMONIALS/Client Testimonials video 1.mp4', name:'Happy Client', role:'Real Estate Developer', initial:'H',
     quote:'They completely transformed our lead generation process and helped us close deals faster.' },
-  { video:'CLIENT TESTIMONIALS/Client Testimonials video 2.mp4', name:'Satisfied Partner', role:'Luxury Broker', initial:'S',
+  { video:'public/CLIENT TESTIMONIALS/Client Testimonials video 2.mp4', name:'Satisfied Partner', role:'Luxury Broker', initial:'S',
     quote:'The quality of videos and ROI on our ad campaigns have been incredible.' },
-  { video:'CLIENT TESTIMONIALS/Client Testimonials video 3.mp4', name:'Premium Builder', role:'Real Estate Developer', initial:'P',
+  { video:'public/CLIENT TESTIMONIALS/Client Testimonials video 3.mp4', name:'Premium Builder', role:'Real Estate Developer', initial:'P',
     quote:'The best marketing decision we made. Incredible leads and branding.' },
-  { video:'CLIENT TESTIMONIALS/client testimonial video 4.mp4', name:'Top Broker', role:'Property Consultant', initial:'T',
+  { video:'public/CLIENT TESTIMONIALS/client testimonial video 4.mp4', name:'Top Broker', role:'Property Consultant', initial:'T',
     quote:'Our sales velocity doubled after partnering with them. Highly recommended.' }
 ];
 
 const caseStudiesDataNew = [
-  { id: 1, image: "Case study/case study 1/image.jpg", project: "Raheja Universal , Juinagar", spent: "9.10 Lakh In a Quarter", leads: "407", visits: "38", deals: "6", revenue: "8.58 CR" },
-  { id: 2, image: "Case study/case study 2/image.jpg", project: "Siddhivinayak , Pushpak Nagar", spent: "4.23 Lakh In a Quarter", leads: "672", visits: "41", deals: "7", revenue: "3.67 CR" },
-  { id: 3, image: "Case study/case study 3/image.webp", project: "Paradise Pyramid, Juinagar", spent: "2.55 Lakh In a Quarter", leads: "318", visits: "27", deals: "3", revenue: "3.12 CR" },
-  { id: 4, image: "Case study/case study 4/image.webp", project: "Neelkant Darshan, Kharghar", spent: "34 Lakh In 6 Months", leads: "1100+", visits: "143+", deals: "26", revenue: "28.60 CR" },
-  { id: 5, image: "Case study/case study 5/image.avif", project: "Magnus, Ulwe", spent: "4.50 Lakh In a Quarter", leads: "700+", visits: "83", deals: "14", revenue: "5.32 CR" },
-  { id: 6, image: "Case study/case study 6/image.webp", project: "The Woods (Plot) , Karjat", spent: "6 Lakh In a Quarter", leads: "934", visits: "52", deals: "4", revenue: "1.60 CR" },
-  { id: 7, image: "Case study/case study 7/image.jpg", project: "DLF Plot & Bungalow , Gurugram", spent: "22 Lakh In a Quarter", leads: "385+", visits: "29", deals: "3", revenue: "12 CR" },
-  { id: 8, image: "Case study/case study 8/Image.png", project: "Canal House, Zirakpur Chandigarh", spent: "1.85 Lakh In a Quarter", leads: "240", visits: "19", deals: "2", revenue: "3.80 CR" },
-  { id: 9, image: "Case study/case study 9/Image.png", project: "Skymark (Plot), Lucknow", spent: "10 Lakh In 6 Month", leads: "1300+", visits: "90+", deals: "22", revenue: "3.08 CR" }
+  { id: 1, image: "public/Case study/case study 1/image.jpg", project: "Raheja Universal , Juinagar", spent: "9.10 Lakh In a Quarter", leads: "407", visits: "38", deals: "6", revenue: "8.58 CR" },
+  { id: 2, image: "public/Case study/case study 2/image.jpg", project: "Siddhivinayak , Pushpak Nagar", spent: "4.23 Lakh In a Quarter", leads: "672", visits: "41", deals: "7", revenue: "3.67 CR" },
+  { id: 3, image: "public/Case study/case study 3/image.webp", project: "Paradise Pyramid, Juinagar", spent: "2.55 Lakh In a Quarter", leads: "318", visits: "27", deals: "3", revenue: "3.12 CR" },
+  { id: 4, image: "public/Case study/case study 4/image.webp", project: "Neelkant Darshan, Kharghar", spent: "34 Lakh In 6 Months", leads: "1100+", visits: "143+", deals: "26", revenue: "28.60 CR" },
+  { id: 5, image: "public/Case study/case study 5/image.avif", project: "Magnus, Ulwe", spent: "4.50 Lakh In a Quarter", leads: "700+", visits: "83", deals: "14", revenue: "5.32 CR" },
+  { id: 6, image: "public/Case study/case study 6/image.webp", project: "The Woods (Plot) , Karjat", spent: "6 Lakh In a Quarter", leads: "934", visits: "52", deals: "4", revenue: "1.60 CR" },
+  { id: 7, image: "public/Case study/case study 7/image.jpg", project: "DLF Plot & Bungalow , Gurugram", spent: "22 Lakh In a Quarter", leads: "385+", visits: "29", deals: "3", revenue: "12 CR" },
+  { id: 8, image: "public/Case study/case study 8/Image.png", project: "Canal House, Zirakpur Chandigarh", spent: "1.85 Lakh In a Quarter", leads: "240", visits: "19", deals: "2", revenue: "3.80 CR" },
+  { id: 9, image: "public/Case study/case study 9/Image.png", project: "Skymark (Plot), Lucknow", spent: "10 Lakh In 6 Month", leads: "1300+", visits: "90+", deals: "22", revenue: "3.08 CR" }
 ];
 
 
-// Dynamic path fixer for local file:/// protocol
-if (window.isLocalFile) {
-  // Prepend public/ to data arrays
-  if (typeof videosData !== 'undefined') {
-    videosData.forEach(v => {
-      if (v.src && !v.src.startsWith('public/')) v.src = 'public/' + v.src;
-    });
-  }
-  if (typeof testimonialsData !== 'undefined') {
-    testimonialsData.forEach(t => {
-      if (t.video && !t.video.startsWith('public/')) t.video = 'public/' + t.video;
-    });
-  }
-  if (typeof caseStudiesDataNew !== 'undefined') {
-    caseStudiesDataNew.forEach(c => {
-      if (c.image && !c.image.startsWith('public/')) c.image = 'public/' + c.image;
-    });
-  }
-  
-  // Fix static images immediately
-  document.querySelectorAll('img').forEach(img => {
-    const src = img.getAttribute('src');
-    if (src && !src.startsWith('http') && !src.startsWith('public/')) {
-      img.setAttribute('src', 'public/' + src);
-    }
-  });
-
-  // Fix favicon
-  document.querySelectorAll('link[rel="icon"]').forEach(link => {
-    const href = link.getAttribute('href');
-    if (href && !href.startsWith('http') && !href.startsWith('public/')) {
-      link.setAttribute('href', 'public/' + href);
-    }
-  });
-}
+// Paths are hardcoded with public/ prefix for local compatibility
 
 // ===== RENDER FUNCTIONS =====
 
