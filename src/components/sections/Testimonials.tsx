@@ -124,12 +124,7 @@ export function Testimonials({ onEnquiry }: { onEnquiry: () => void }) {
         </div>
       </div>
 
-      {/* CTA */}
-      <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mt-16">
-        <button onClick={onEnquiry} className="px-8 py-3 rounded-full text-sm uppercase tracking-widest inline-flex items-center gap-2 font-semibold transition-all duration-300 hover:bg-white/10" style={{ border: "1px solid rgba(123,92,246,0.3)", color: "#7B5CF6" }}>
-          Share Your Story <ArrowRight className="w-4 h-4" />
-        </button>
-      </motion.div>
+
 
       {/* Bottom wave (matches Services background) */}
       <div className="absolute bottom-0 left-0 right-0">

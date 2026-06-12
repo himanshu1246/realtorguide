@@ -73,10 +73,7 @@ export function Production({ onEnquiry }: { onEnquiry?: () => void }) {
           <h2 className="text-4xl md:text-5xl font-bold mb-4 leading-tight" style={{ color: "white", fontFamily: "Syne, sans-serif" }}>
             Content That Sells <span style={{ color: "#7B5CF6" }}>Properties.</span>
           </h2>
-          
-          <p className="mb-8 max-w-2xl mx-auto" style={{ fontSize: "1.1rem", color: "rgba(123,92,246,0.8)" }}>
-            Dozens of fully customizable templates in all desi language
-          </p>
+
           
           <button 
             onClick={onEnquiry}
