@@ -55,21 +55,24 @@ export function Contact() {
 
             <div className="space-y-8">
               {[
-                { icon: <Phone className="w-5 h-5" />, title: "Phone", detail: "+91 98765 43210" },
-                { icon: <Mail className="w-5 h-5" />, title: "Email", detail: "hello@realtorguide.com" },
-                { icon: <MapPin className="w-5 h-5" />, title: "Office", detail: "Premium Business Park, Mumbai" },
-                { icon: <MessageCircle className="w-5 h-5" />, title: "WhatsApp", detail: "Chat with us directly" },
-              ].map((item, i) => (
-                <div key={i} className="flex items-start gap-5 group cursor-pointer">
-                  <div className="w-12 h-12 rounded-[30px] flex items-center justify-center group-hover:scale-110 transition-all duration-300" style={{ background: "rgba(123,92,246,0.06)", color: "#7B5CF6", border: "1px solid rgba(123,92,246,0.1)" }}>
-                    {item.icon}
-                  </div>
-                  <div>
-                    <h4 className="font-bold mb-1 text-sm uppercase tracking-wider" style={{ color: "#1D1D2B" }}>{item.title}</h4>
-                    <p className="group-hover:text-purple transition-colors" style={{ color: "#4B5563" }}>{item.detail}</p>
-                  </div>
-                </div>
-              ))}
+                { icon: <Phone className="w-5 h-5" />, title: "Phone", detail: "+91 7007319062", link: "tel:+917007319062" },
+                { icon: <Mail className="w-5 h-5" />, title: "Email", detail: "services@realtorguide.in", link: "mailto:services@realtorguide.in" },
+                { icon: <MapPin className="w-5 h-5" />, title: "Office", detail: "Belapur Station Tower no 10th,6th floor ,Realtor Guide", link: "#" },
+                { icon: <MessageCircle className="w-5 h-5" />, title: "WhatsApp", detail: "Chat with us directly", link: "https://wa.me/917007319062?text=Hello%20Realtor%20Guide%2C%20I%20would%20like%20to%20know%20more%20about%20your%20services." },
+              ].map((item, i) => {
+                const Wrapper = item.link !== "#" ? "a" : "div";
+                return (
+                  <Wrapper key={i} href={item.link !== "#" ? item.link : undefined} target={item.link?.startsWith("http") ? "_blank" : undefined} className="flex items-start gap-5 group cursor-pointer" style={{ textDecoration: 'none' }}>
+                    <div className="w-12 h-12 rounded-[30px] flex items-center justify-center group-hover:scale-110 transition-all duration-300" style={{ background: "rgba(123,92,246,0.06)", color: "#7B5CF6", border: "1px solid rgba(123,92,246,0.1)" }}>
+                      {item.icon}
+                    </div>
+                    <div>
+                      <h4 className="font-bold mb-1 text-sm uppercase tracking-wider" style={{ color: "#1D1D2B" }}>{item.title}</h4>
+                      <p className="group-hover:text-purple transition-colors" style={{ color: "#4B5563" }}>{item.detail}</p>
+                    </div>
+                  </Wrapper>
+                );
+              })}
             </div>
           </div>
 

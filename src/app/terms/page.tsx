@@ -67,8 +67,8 @@ export default function TermsOfService() {
             <p style={{ color: "#4B5563", lineHeight: "1.8" }}>For questions regarding these terms, please contact us:</p>
             <div className="mt-4 p-6 rounded-[30px]" style={{ background: "#FFFFFF", border: "1px solid rgba(139,92,246,0.1)" }}>
               <p className="font-bold" style={{ color: "#1E1B4B" }}>Realtor Guide</p>
-              <p style={{ color: "#4B5563" }}>Email: hello@realtorguide.com</p>
-              <p style={{ color: "#4B5563" }}>Phone: +91 98765 43210</p>
+              <p style={{ color: "#4B5563" }}>Email: services@realtorguide.in</p>
+              <p style={{ color: "#4B5563" }}>Phone: +91 7007319062</p>
             </div>
           </section>
 

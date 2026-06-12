@@ -54,7 +54,7 @@ export default function PrivacyPolicy() {
 
           <section>
             <h2 className="text-2xl font-bold mb-4" style={{ color: "#1E1B4B", fontFamily: "var(--font-syne)" }}>6. Your Rights</h2>
-            <p style={{ color: "#4B5563", lineHeight: "1.8" }}>You have the right to access, update, or delete your personal information at any time. To exercise these rights, please contact us at hello@realtorguide.com.</p>
+            <p style={{ color: "#4B5563", lineHeight: "1.8" }}>You have the right to access, update, or delete your personal information at any time. To exercise these rights, please contact us at services@realtorguide.in.</p>
           </section>
 
           <section>
@@ -62,8 +62,8 @@ export default function PrivacyPolicy() {
             <p style={{ color: "#4B5563", lineHeight: "1.8" }}>If you have questions about this Privacy Policy, please contact us at:</p>
             <div className="mt-4 p-6 rounded-[30px]" style={{ background: "#FFFFFF", border: "1px solid rgba(139,92,246,0.1)" }}>
               <p className="font-bold" style={{ color: "#1E1B4B" }}>Realtor Guide</p>
-              <p style={{ color: "#4B5563" }}>Email: hello@realtorguide.com</p>
-              <p style={{ color: "#4B5563" }}>Phone: +91 98765 43210</p>
+              <p style={{ color: "#4B5563" }}>Email: services@realtorguide.in</p>
+              <p style={{ color: "#4B5563" }}>Phone: +91 7007319062</p>
             </div>
           </section>
 

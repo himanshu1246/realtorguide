@@ -55,13 +55,11 @@ export function Footer() {
           <div>
             <h4 className="font-bold mb-6 text-xs uppercase tracking-[0.2em]" style={{ color: "#1D1D2B" }}>Connect</h4>
             <div className="flex space-x-3 mb-8">
-              {[<InstagramIcon key="ig" />, <FacebookIcon key="fb" />, <LinkedinIcon key="li" />, <TwitterIcon key="tw" />].map((icon, i) => (
-                <a key={i} href="#" className="w-10 h-10 rounded-[30px] flex items-center justify-center transition-all duration-300 hover:scale-110" style={{ background: "rgba(123,92,246,0.06)", color: "#7B5CF6", border: "1px solid rgba(123,92,246,0.08)" }}>
-                  {icon}
-                </a>
-              ))}
+              <a href="https://www.instagram.com/_realtorguide?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-[30px] flex items-center justify-center transition-all duration-300 hover:scale-110" style={{ background: "rgba(123,92,246,0.06)", color: "#7B5CF6", border: "1px solid rgba(123,92,246,0.08)" }}>
+                <InstagramIcon />
+              </a>
             </div>
-            <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-6 py-3 rounded-[30px] text-sm font-bold text-white transition-all duration-300 hover:opacity-90" style={{ background: "#25D366" }}>
+            <a href="https://wa.me/917007319062?text=Hello%20Realtor%20Guide%2C%20I%20would%20like%20to%20know%20more%20about%20your%20services." target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-6 py-3 rounded-[30px] text-sm font-bold text-white transition-all duration-300 hover:opacity-90" style={{ background: "#25D366" }}>
               <MessageCircle className="w-4 h-4" />
               Chat on WhatsApp
             </a>
