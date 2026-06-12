@@ -147,25 +147,7 @@ export function Production({ onEnquiry }: { onEnquiry?: () => void }) {
 
                 {/* Video Info Overlay */}
                 <div
-                  className="absolute bottom-0 left-0 right-0 p-6 transition-all duration-300 ease-out"
-                  style={{
-                    background: "linear-gradient(to top, rgba(0,0,0,0.95), transparent)",
-                    opacity: isActive ? 1 : 0,
-                    transform: isActive ? "translateY(0)" : "translateY(10px)"
-                  }}
-                >
-                  <div style={{ fontFamily: "Syne, sans-serif", fontSize: "1.25rem", fontWeight: 700, marginBottom: "6px", color: "white" }}>
-                    {video.title}
-                  </div>
-                  <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider backdrop-blur-sm"
-                    style={{
-                      background: "rgba(123,92,246,0.25)",
-                      border: "1px solid rgba(123,92,246,0.4)",
-                      color: "#FFFFFF"
-                    }}>
-                    {video.category}
-                  </span>
-                </div>
+
               </div>
             );
           })}

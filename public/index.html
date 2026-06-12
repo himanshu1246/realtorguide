@@ -3,12 +3,8 @@
 <head>
 
 <script>
-  // Fix for local viewing: if opened locally outside the public folder, point assets to public/
-  if (window.location.protocol === 'file:' && window.location.pathname.indexOf('/public/index.html') === -1) {
-    var base = document.createElement('base');
-    base.href = 'public/';
-    document.head.prepend(base);
-  }
+  // Local viewing helper flag (doesn't use security-restricted <base> tags)
+  window.isLocalFile = (window.location.protocol === 'file:' && window.location.pathname.indexOf('/public/index.html') === -1);
 </script>
 
 <meta charset="UTF-8">
@@ -1403,6 +1399,55 @@ const testimonialsData = [
     quote:'Our sales velocity doubled after partnering with them. Highly recommended.' }
 ];
 
+const caseStudiesDataNew = [
+  { id: 1, image: "Case study/case study 1/image.jpg", project: "Raheja Universal , Juinagar", spent: "9.10 Lakh In a Quarter", leads: "407", visits: "38", deals: "6", revenue: "8.58 CR" },
+  { id: 2, image: "Case study/case study 2/image.jpg", project: "Siddhivinayak , Pushpak Nagar", spent: "4.23 Lakh In a Quarter", leads: "672", visits: "41", deals: "7", revenue: "3.67 CR" },
+  { id: 3, image: "Case study/case study 3/image.webp", project: "Paradise Pyramid, Juinagar", spent: "2.55 Lakh In a Quarter", leads: "318", visits: "27", deals: "3", revenue: "3.12 CR" },
+  { id: 4, image: "Case study/case study 4/image.webp", project: "Neelkant Darshan, Kharghar", spent: "34 Lakh In 6 Months", leads: "1100+", visits: "143+", deals: "26", revenue: "28.60 CR" },
+  { id: 5, image: "Case study/case study 5/image.avif", project: "Magnus, Ulwe", spent: "4.50 Lakh In a Quarter", leads: "700+", visits: "83", deals: "14", revenue: "5.32 CR" },
+  { id: 6, image: "Case study/case study 6/image.webp", project: "The Woods (Plot) , Karjat", spent: "6 Lakh In a Quarter", leads: "934", visits: "52", deals: "4", revenue: "1.60 CR" },
+  { id: 7, image: "Case study/case study 7/image.jpg", project: "DLF Plot & Bungalow , Gurugram", spent: "22 Lakh In a Quarter", leads: "385+", visits: "29", deals: "3", revenue: "12 CR" },
+  { id: 8, image: "Case study/case study 8/Image.png", project: "Canal House, Zirakpur Chandigarh", spent: "1.85 Lakh In a Quarter", leads: "240", visits: "19", deals: "2", revenue: "3.80 CR" },
+  { id: 9, image: "Case study/case study 9/Image.png", project: "Skymark (Plot), Lucknow", spent: "10 Lakh In 6 Month", leads: "1300+", visits: "90+", deals: "22", revenue: "3.08 CR" }
+];
+
+
+// Dynamic path fixer for local file:/// protocol
+if (window.isLocalFile) {
+  // Prepend public/ to data arrays
+  if (typeof videosData !== 'undefined') {
+    videosData.forEach(v => {
+      if (v.src && !v.src.startsWith('public/')) v.src = 'public/' + v.src;
+    });
+  }
+  if (typeof testimonialsData !== 'undefined') {
+    testimonialsData.forEach(t => {
+      if (t.video && !t.video.startsWith('public/')) t.video = 'public/' + t.video;
+    });
+  }
+  if (typeof caseStudiesDataNew !== 'undefined') {
+    caseStudiesDataNew.forEach(c => {
+      if (c.image && !c.image.startsWith('public/')) c.image = 'public/' + c.image;
+    });
+  }
+  
+  // Fix static images immediately
+  document.querySelectorAll('img').forEach(img => {
+    const src = img.getAttribute('src');
+    if (src && !src.startsWith('http') && !src.startsWith('public/')) {
+      img.setAttribute('src', 'public/' + src);
+    }
+  });
+
+  // Fix favicon
+  document.querySelectorAll('link[rel="icon"]').forEach(link => {
+    const href = link.getAttribute('href');
+    if (href && !href.startsWith('http') && !href.startsWith('public/')) {
+      link.setAttribute('href', 'public/' + href);
+    }
+  });
+}
+
 // ===== RENDER FUNCTIONS =====
 
 
@@ -1452,10 +1497,7 @@ const testimonialsData = [
             <svg viewBox="0 0 24 24" style="width:24px; height:24px; fill:#fff; margin-left:4px;"><path d="M8 5v14l11-7z"/></svg>
           </div>
         </div>
-        <div class="video-info" style="position:absolute; bottom:20px; left:20px; right:20px; z-index:3;">
-          <h3 style="color:#fff; font-size:1.2rem; font-weight:700; margin-bottom:8px;">${vid.title}</h3>
-          <span class="badge" style="background:rgba(255,255,255,0.2); color:#fff; padding:4px 12px; border-radius:20px; font-size:0.8rem; backdrop-filter:blur(4px);">${vid.category}</span>
-        </div>
+
       </div>
     `;
   });
@@ -1564,17 +1606,7 @@ window.toggleTestimonialVideo = function(wrap, e){
   }
 };
 
-const caseStudiesDataNew = [
-  { id: 1, image: "Case study/case study 1/image.jpg", project: "Raheja Universal , Juinagar", spent: "9.10 Lakh In a Quarter", leads: "407", visits: "38", deals: "6", revenue: "8.58 CR" },
-  { id: 2, image: "Case study/case study 2/image.jpg", project: "Siddhivinayak , Pushpak Nagar", spent: "4.23 Lakh In a Quarter", leads: "672", visits: "41", deals: "7", revenue: "3.67 CR" },
-  { id: 3, image: "Case study/case study 3/image.webp", project: "Paradise Pyramid, Juinagar", spent: "2.55 Lakh In a Quarter", leads: "318", visits: "27", deals: "3", revenue: "3.12 CR" },
-  { id: 4, image: "Case study/case study 4/image.webp", project: "Neelkant Darshan, Kharghar", spent: "34 Lakh In 6 Months", leads: "1100+", visits: "143+", deals: "26", revenue: "28.60 CR" },
-  { id: 5, image: "Case study/case study 5/image.avif", project: "Magnus, Ulwe", spent: "4.50 Lakh In a Quarter", leads: "700+", visits: "83", deals: "14", revenue: "5.32 CR" },
-  { id: 6, image: "Case study/case study 6/image.webp", project: "The Woods (Plot) , Karjat", spent: "6 Lakh In a Quarter", leads: "934", visits: "52", deals: "4", revenue: "1.60 CR" },
-  { id: 7, image: "Case study/case study 7/image.jpg", project: "DLF Plot & Bungalow , Gurugram", spent: "22 Lakh In a Quarter", leads: "385+", visits: "29", deals: "3", revenue: "12 CR" },
-  { id: 8, image: "Case study/case study 8/Image.png", project: "Canal House, Zirakpur Chandigarh", spent: "1.85 Lakh In a Quarter", leads: "240", visits: "19", deals: "2", revenue: "3.80 CR" },
-  { id: 9, image: "Case study/case study 9/Image.png", project: "Skymark (Plot), Lucknow", spent: "10 Lakh In 6 Month", leads: "1300+", visits: "90+", deals: "22", revenue: "3.08 CR" }
-];
+
 
 (function renderCaseStudiesNew(){
   const grid = document.getElementById('caseStudiesGridNew');
