@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+<script>
+  // Fix for local viewing: if opened locally outside the public folder, point assets to public/
+  if (window.location.protocol === 'file:' && window.location.pathname.indexOf('/public/index.html') === -1) {
+    var base = document.createElement('base');
+    base.href = 'public/';
+    document.head.prepend(base);
+  }
+</script>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Realtor Guide — Premium Real Estate Marketing Agency</title>
@@ -906,6 +916,15 @@ body { font-family:"Inter",sans-serif; color:#111; background:#FFFFFF; line-heig
   .cs-image { flex: 0 0 auto; max-width: 100%; height: 250px; }
 }
 
+
+.marquee-wrapper {
+  overflow: hidden;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  position: relative;
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
 </style>
 
 <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
