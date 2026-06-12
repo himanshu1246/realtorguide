@@ -3,8 +3,25 @@
 <head>
 
 <script>
-  // Local viewing helper flag (doesn't use security-restricted <base> tags)
+  // Local file viewing fix: prepend 'public/' to asset paths when opened directly via file:/// in Chrome
   window.isLocalFile = (window.location.protocol === 'file:' && window.location.pathname.indexOf('/public/index.html') === -1);
+  
+  // Fix already-rendered images as soon as DOM is interactive
+  document.addEventListener('DOMContentLoaded', function() {
+    if (!window.isLocalFile) return;
+    document.querySelectorAll('img[src]').forEach(function(img) {
+      var s = img.getAttribute('src');
+      if (s && !s.startsWith('http') && !s.startsWith('data:') && !s.startsWith('public/')) {
+        img.setAttribute('src', 'public/' + s);
+      }
+    });
+    document.querySelectorAll('video[src]').forEach(function(v) {
+      var s = v.getAttribute('src');
+      if (s && !s.startsWith('http') && !s.startsWith('public/')) {
+        v.setAttribute('src', 'public/' + s);
+      }
+    });
+  });
 </script>
 
 <meta charset="UTF-8">
@@ -960,7 +977,7 @@ body { background-color: #FFFFFF; color: #111; font-size: 17px; font-weight: 500
 <!-- ===== NAVBAR ===== -->
 <nav class="navbar" id="navbar">
   <div class="container">
-    <a href="#" class="navbar-logo"><img src="logo.png" alt="Realtor Guide"></a>
+    <a href="#" class="navbar-logo"><img src="logo.png" onerror="if(!this.dataset.retried){this.dataset.retried=1;this.src='public/logo.png';}" alt="Realtor Guide"></a>
     <ul class="navbar-links">
       <li><a href="#hero">Home</a></li>
       <li><a href="#clients">Clients</a></li>
@@ -1233,7 +1250,7 @@ body { background-color: #FFFFFF; color: #111; font-size: 17px; font-weight: 500
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <img src="logo.png" alt="Realtor Guide">
+        <img src="logo.png" onerror="if(!this.dataset.retried){this.dataset.retried=1;this.src='public/logo.png';}" alt="Realtor Guide">
         <p class="footer-brand-desc">India's leading real estate marketing agency. We help developers and brokers generate high-quality leads that convert into sales.</p>
       </div>
       <div class="footer-col">
