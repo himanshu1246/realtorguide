@@ -850,8 +850,7 @@ body { background-color: #050505; color: #fff; }
 /* Remove old waves */
 .section-wave { display: none; }
 </style>
-  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-</head>
+  </head>
 <body>
 
 <!-- ===== NAVBAR ===== -->
@@ -1265,7 +1264,6 @@ body { background-color: #050505; color: #fff; }
           <label>Message</label>
           <textarea placeholder="How can we help?" rows="3"></textarea>
         </div>
-        <div class="g-recaptcha" data-sitekey="6LdHViAtAAAAAMx6wXsdE2xBap4nxIa468HBomzW" style="margin-bottom: 16px;"></div>
         <button type="submit" class="btn-primary" id="modalSubmitBtn">Send Enquiry</button>
       </form>
     </div>
@@ -1576,11 +1574,6 @@ document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeModal(); });
 
 function handleModalSubmit(e){
   e.preventDefault();
-    const recaptchaResponse = e.target.querySelector('.g-recaptcha-response')?.value;
-  if (!recaptchaResponse) {
-    alert("Please complete the reCAPTCHA to verify you are human.");
-    return;
-  }
   const btn = document.getElementById('modalSubmitBtn');
   btn.innerHTML = '<span class="spinner"></span>';
   btn.disabled = true;
@@ -1594,11 +1587,6 @@ function handleModalSubmit(e){
 // ===== CONTACT FORM =====
 function handleContactSubmit(e){
   e.preventDefault();
-    const recaptchaResponse = e.target.querySelector('.g-recaptcha-response')?.value;
-  if (!recaptchaResponse) {
-    alert("Please complete the reCAPTCHA to verify you are human.");
-    return;
-  }
   const btn = document.getElementById('contactSubmitBtn');
   btn.innerHTML = '<span class="spinner"></span>';
   btn.disabled = true;

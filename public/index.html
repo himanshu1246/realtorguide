@@ -11,7 +11,6 @@
 <meta property="og:type" content="website">
 <title>Realtor Guide — Premium Real Estate Marketing Agency</title>
 <!-- Removed front-end security deterrent -->
-<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 <link rel="icon" href="icon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1330,7 +1329,6 @@ body { background-color: #FFFFFF; color: #111; font-size: 17px; font-weight: 500
           <label>Message</label>
           <textarea name="Message" placeholder="How can we help?" rows="3"></textarea>
         </div>
-        <div class="g-recaptcha" data-sitekey="6LdHViAtAAAAAMx6wXsdE2xBap4nxIa468HBomzW" style="margin-bottom: 16px;"></div>
         <button type="submit" class="btn-primary" id="modalSubmitBtn">Send Enquiry</button>
       </form>
     </div>
@@ -1710,11 +1708,6 @@ document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeModal(); });
 
 function handleModalSubmit(e){
   e.preventDefault();
-    const recaptchaResponse = e.target.querySelector('.g-recaptcha-response')?.value;
-  if (!recaptchaResponse) {
-    alert("Please complete the reCAPTCHA to verify you are human.");
-    return;
-  }
   const form = e.target;
   const btn = document.getElementById('modalSubmitBtn');
   btn.innerHTML = '<span class="spinner"></span>';
@@ -1754,11 +1747,6 @@ window.GOOGLE_SHEET_WEBAPP_URL = "https://script.google.com/macros/s/AKfycbwmf77
 // ===== CONTACT FORM =====
 function handleContactSubmit(e){
   e.preventDefault();
-    const recaptchaResponse = e.target.querySelector('.g-recaptcha-response')?.value;
-  if (!recaptchaResponse) {
-    alert("Please complete the reCAPTCHA to verify you are human.");
-    return;
-  }
   const form = e.target;
   const btn = document.getElementById('contactSubmitBtn');
   btn.innerHTML = '<span class="spinner"></span>';
