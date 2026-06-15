@@ -1,12 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-<!-- local path fix: paths hardcoded with public/ prefix -->
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Realtor Guide is a premium real estate marketing agency specializing in lead generation, social media, content production, and AI automation for real estate professionals.">
+<meta name="keywords" content="Real Estate Marketing, Lead Generation, Realtor, Content Production, AI Automation, Real Estate Agency">
+<meta name="author" content="Realtor Guide">
+<meta property="og:title" content="Realtor Guide — Premium Real Estate Marketing Agency">
+<meta property="og:description" content="Grow your real estate business with our end-to-end marketing ecosystem.">
+<meta property="og:type" content="website">
 <title>Realtor Guide — Premium Real Estate Marketing Agency</title>
+<script>
+// Basic front-end security to prevent casual inspection
+document.addEventListener('contextmenu', event => event.preventDefault());
+document.addEventListener('keydown', event => {
+    if (event.keyCode == 123) { // F12
+        event.preventDefault();
+    }
+    if (event.ctrlKey && event.shiftKey && (event.keyCode == 73 || event.keyCode == 74)) { // Ctrl+Shift+I or J
+        event.preventDefault();
+    }
+    if (event.ctrlKey && event.keyCode == 85) { // Ctrl+U
+        event.preventDefault();
+    }
+});
+</script>
 <link rel="icon" href="icon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -575,6 +593,10 @@ body { font-family:"Inter",sans-serif; color:#111; background:#FFFFFF; line-heig
   0% { transform: translateX(0); }
   100% { transform: translateX(calc(-50% - 12px)); }
 }
+@keyframes scrollMarqueeThree {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-33.333333% - 8px)); }
+}
 
 .testimonial-card {
   background:rgba(255,255,255,0.04); border:1px solid rgba(139,92,246,0.15);
@@ -865,14 +887,14 @@ body { font-family:"Inter",sans-serif; color:#111; background:#FFFFFF; line-heig
 .hero-card-leads-label { font-size: 1.2rem !important; margin-bottom: 5px !important; }
 
 
-.case-studies-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(380px, 1fr)); gap:32px; width:100%; max-width: 1200px; margin: 0 auto; }
+.case-studies-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:32px; width:100%; max-width: 1200px; margin: 0 auto; }
 .cs-card { display:flex; background:#fff; border-radius:30px; overflow:hidden; border:1px solid rgba(139,92,246,0.1); box-shadow:0 10px 30px rgba(139,92,246,0.05); transition:transform 0.3s ease, box-shadow 0.3s ease; }
 .cs-card:hover { transform:translateY(-5px); box-shadow:0 20px 40px rgba(139,92,246,0.12); }
-.cs-image { flex: 0 0 45%; max-width: 45%; object-fit:cover; min-height: 250px; }
-.cs-content { flex: 1; padding: 24px; display:flex; flex-direction:column; justify-content:center; }
-.cs-header { display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:20px; border-bottom: 1px solid rgba(0,0,0,0.05); padding-bottom: 15px; }
-.cs-project { font-family:'Inter',sans-serif; font-size:1.1rem; font-weight:700; color:#1D1D2B; flex:1; padding-right:10px; line-height: 1.3; }
-.cs-revenue-wrapper { text-align:right; }
+.cs-image { flex: 0 0 40%; max-width: 40%; object-fit:cover; min-height: 250px; }
+.cs-content { flex: 1; padding: 16px 20px; display:flex; flex-direction:column; justify-content:center; min-width:0; }
+.cs-header { display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:16px; border-bottom: 1px solid rgba(0,0,0,0.05); padding-bottom: 12px; flex-wrap: wrap; gap: 8px; }
+.cs-project { font-family:'Inter',sans-serif; font-size:1.1rem; font-weight:700; color:#1D1D2B; flex:1 1 100px; padding-right:0; line-height: 1.3; word-break: break-word; }
+.cs-revenue-wrapper { text-align:right; flex-shrink:0; white-space:nowrap; }
 .cs-revenue-label { font-size:0.75rem; color:#6B7280; text-transform:uppercase; letter-spacing:1px; margin-bottom:4px; }
 .cs-revenue-val { font-size:1.2rem; font-weight:800; color:#10B981; }
 .cs-stats-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
@@ -884,29 +906,7 @@ body { font-family:"Inter",sans-serif; color:#111; background:#FFFFFF; line-heig
 @media (max-width: 768px) {
   .cs-card { flex-direction: column; }
   .cs-image { flex: 0 0 auto; max-width: 100%; height: 250px; }
-}
-
-
-
-.case-studies-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(380px, 1fr)); gap:32px; width:100%; max-width: 1200px; margin: 0 auto; }
-.cs-card { display:flex; background:#fff; border-radius:30px; overflow:hidden; border:1px solid rgba(139,92,246,0.1); box-shadow:0 10px 30px rgba(139,92,246,0.05); transition:transform 0.3s ease, box-shadow 0.3s ease; }
-.cs-card:hover { transform:translateY(-5px); box-shadow:0 20px 40px rgba(139,92,246,0.12); }
-.cs-image { flex: 0 0 45%; max-width: 45%; object-fit:cover; min-height: 250px; }
-.cs-content { flex: 1; padding: 24px; display:flex; flex-direction:column; justify-content:center; }
-.cs-header { display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:20px; border-bottom: 1px solid rgba(0,0,0,0.05); padding-bottom: 15px; }
-.cs-project { font-family:'Inter',sans-serif; font-size:1.1rem; font-weight:700; color:#1D1D2B; flex:1; padding-right:10px; line-height: 1.3; }
-.cs-revenue-wrapper { text-align:right; }
-.cs-revenue-label { font-size:0.75rem; color:#6B7280; text-transform:uppercase; letter-spacing:1px; margin-bottom:4px; }
-.cs-revenue-val { font-size:1.2rem; font-weight:800; color:#10B981; }
-.cs-stats-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
-.cs-stat { display:flex; flex-direction:column; }
-.cs-stat-label { font-size:0.75rem; color:#6B7280; margin-bottom:4px; }
-.cs-stat-val { font-size:1rem; font-weight:700; color:#4B5563; }
-.cs-view-all-container { text-align: center; margin-top: 50px; }
-
-@media (max-width: 768px) {
-  .cs-card { flex-direction: column; }
-  .cs-image { flex: 0 0 auto; max-width: 100%; height: 250px; }
+  .case-studies-grid { grid-template-columns: 1fr; gap: 20px; }
 }
 
 
@@ -917,6 +917,24 @@ body { font-family:"Inter",sans-serif; color:#111; background:#FFFFFF; line-heig
   position: relative;
   -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
   mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+/* Hide scrollbar when manual browsing */
+.testimonials-marquee-container::-webkit-scrollbar,
+.clients-marquee-wrapper::-webkit-scrollbar {
+  display: none;
+}
+.testimonials-marquee-container,
+.clients-marquee-wrapper {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Corner pause/play button */
+.marquee-corner-btn:hover {
+  transform: scale(1.1);
+  border-color: #7B5CF6;
+  box-shadow: 0 6px 20px rgba(123,92,246,0.25);
 }
 </style>
 
@@ -959,12 +977,13 @@ body { background-color: #FFFFFF; color: #111; font-size: 17px; font-weight: 500
   <div class="container">
     <a href="#" class="navbar-logo"><img src="logo.png" alt="Realtor Guide"></a>
     <ul class="navbar-links">
-      <li><a href="#hero">Home</a></li>
-      <li><a href="#clients">Clients</a></li>
-      <li><a href="#production">Our Work</a></li>
-      <li><a href="#process">Process</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="index.html#hero">Home</a></li>
+      <li><a href="index.html#clients">Clients</a></li>
+      <li><a href="index.html#production">Our Work</a></li>
+      <li><a href="index.html#process">Process</a></li>
+      <li><a href="index.html#services">Services</a></li>
+      <li><a href="career.html">Career</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
     </ul>
     <div class="navbar-cta"><button class="btn-primary" style="font-size: 0.9rem; padding: 12px 28px; border-radius: 30px; font-weight: 700;" onclick="openModal()">Enquire Now</button></div>
     <button class="hamburger" id="hamburger" onclick="toggleMobileMenu()">
@@ -975,12 +994,13 @@ body { background-color: #FFFFFF; color: #111; font-size: 17px; font-weight: 500
 
 <!-- Mobile Menu -->
 <div class="mobile-menu" id="mobileMenu">
-  <a href="#hero" onclick="closeMobileMenu()">Home</a>
-  <a href="#clients" onclick="closeMobileMenu()">Clients</a>
-  <a href="#production" onclick="closeMobileMenu()">Our Work</a>
-  <a href="#process" onclick="closeMobileMenu()">Process</a>
-  <a href="#services" onclick="closeMobileMenu()">Services</a>
-  <a href="#contact" onclick="closeMobileMenu()">Contact</a>
+  <a href="index.html#hero" onclick="closeMobileMenu()">Home</a>
+  <a href="index.html#clients" onclick="closeMobileMenu()">Clients</a>
+  <a href="index.html#production" onclick="closeMobileMenu()">Our Work</a>
+  <a href="index.html#process" onclick="closeMobileMenu()">Process</a>
+  <a href="index.html#services" onclick="closeMobileMenu()">Services</a>
+  <a href="career.html">Career</a>
+  <a href="index.html#contact" onclick="closeMobileMenu()">Contact</a>
   <button class="btn-primary" style="font-size: 0.9rem; padding: 12px 28px; border-radius: 30px; font-weight: 700; width: 100%;" onclick="openModal(); closeMobileMenu();">Enquire Now</button>
 </div>
 
@@ -1010,9 +1030,9 @@ body { background-color: #FFFFFF; color: #111; font-size: 17px; font-weight: 500
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
           BOOK STRATEGY CALL
         </button>
-        <a href="#process" class="btn-primary">
+        <a href="#production" class="btn-primary">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
-          View Our Process
+          VIEW OUR PROCESS
         </a>
       </div>
       <div class="hero-stats" id="heroStats">
@@ -1049,7 +1069,7 @@ body { background-color: #FFFFFF; color: #111; font-size: 17px; font-weight: 500
     <div class="container case-studies-container">
       <div class="case-studies-grid" id="caseStudiesGridNew"></div>
       <div class="cs-view-all-container reveal">
-        <button class="btn-secondary" onclick="openModal()">View all case studies</button>
+        <button class="btn-secondary" onclick="openModal()">ENQUIRE NOW</button>
       </div>
     </div>
   <div class="section-wave">
@@ -1083,9 +1103,17 @@ body { background-color: #FFFFFF; color: #111; font-size: 17px; font-weight: 500
     </div>
   </div>
   
-  <div class="clients-marquee-wrapper" style="overflow: hidden; width: 100vw; margin-left: calc(-50vw + 50%); position: relative; margin-top: 40px; margin-bottom: 80px; -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);">
-    <div class="clients-marquee-track" id="videoCarousel" style="display: flex; gap: 24px; width: max-content; animation: scrollMarquee 35s linear infinite;">
-      <!-- Video cards injected by JS -->
+  <div class="marquee-section-wrap" style="position: relative; margin-top: 40px; margin-bottom: 80px; width: 100vw; margin-left: calc(-50vw + 50%);">
+    <button class="marquee-arrow left-arrow" onclick="scrollMarqueeGrid('videoCarousel', -350)" title="Scroll Left" style="position:absolute; top:50%; transform:translateY(-50%); left:20px; z-index:20; width:50px; height:50px; border-radius:50%; border:1px solid rgba(123,92,246,0.3); background:rgba(255,255,255,0.95); backdrop-filter:blur(8px); cursor:pointer; display:flex; align-items:center; justify-content:center; transition:all 0.3s ease; box-shadow: 0 4px 15px rgba(0,0,0,0.15);">
+      <svg viewBox="0 0 24 24" style="width:28px; height:28px; fill:#7B5CF6;"><path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z"/></svg>
+    </button>
+    <button class="marquee-arrow right-arrow" onclick="scrollMarqueeGrid('videoCarousel', 350)" title="Scroll Right" style="position:absolute; top:50%; transform:translateY(-50%); right:20px; z-index:20; width:50px; height:50px; border-radius:50%; border:1px solid rgba(123,92,246,0.3); background:rgba(255,255,255,0.95); backdrop-filter:blur(8px); cursor:pointer; display:flex; align-items:center; justify-content:center; transition:all 0.3s ease; box-shadow: 0 4px 15px rgba(0,0,0,0.15);">
+      <svg viewBox="0 0 24 24" style="width:28px; height:28px; fill:#7B5CF6;"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>
+    </button>
+    <div class="clients-marquee-wrapper" style="overflow: hidden; width: 100%; position: relative; -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);">
+      <div class="clients-marquee-track" id="videoCarousel" style="display: flex; gap: 24px; width: max-content; animation: scrollMarqueeThree 35s linear infinite;">
+        <!-- Video cards injected by JS -->
+      </div>
     </div>
   </div>
 </section>
@@ -1104,9 +1132,17 @@ body { background-color: #FFFFFF; color: #111; font-size: 17px; font-weight: 500
       <p class="testimonials-subtext" style="color:#4B5563; max-width:500px; margin:0 auto 24px;">Hear from real estate professionals who transformed their business with our marketing systems.</p>
     </div>
     
-    <div class="testimonials-marquee-container" style="overflow: hidden; width: 100vw; margin-left: calc(-50vw + 50%); position: relative; -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);">
-      <div class="testimonials-grid" id="testimonialsGrid" style="display: flex; gap: 24px; width: max-content; animation: scrollMarquee 30s linear infinite;">
-        <!-- Cards injected by JS -->
+    <div class="marquee-section-wrap" style="position: relative; width: 100vw; margin-left: calc(-50vw + 50%);">
+      <button class="marquee-arrow left-arrow" onclick="scrollMarqueeGrid('testimonialsGrid', -350)" title="Scroll Left" style="position:absolute; top:50%; transform:translateY(-50%); left:20px; z-index:20; width:50px; height:50px; border-radius:50%; border:1px solid rgba(123,92,246,0.3); background:rgba(255,255,255,0.95); backdrop-filter:blur(8px); cursor:pointer; display:flex; align-items:center; justify-content:center; transition:all 0.3s ease; box-shadow: 0 4px 15px rgba(0,0,0,0.15);">
+        <svg viewBox="0 0 24 24" style="width:28px; height:28px; fill:#7B5CF6;"><path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z"/></svg>
+      </button>
+      <button class="marquee-arrow right-arrow" onclick="scrollMarqueeGrid('testimonialsGrid', 350)" title="Scroll Right" style="position:absolute; top:50%; transform:translateY(-50%); right:20px; z-index:20; width:50px; height:50px; border-radius:50%; border:1px solid rgba(123,92,246,0.3); background:rgba(255,255,255,0.95); backdrop-filter:blur(8px); cursor:pointer; display:flex; align-items:center; justify-content:center; transition:all 0.3s ease; box-shadow: 0 4px 15px rgba(0,0,0,0.15);">
+        <svg viewBox="0 0 24 24" style="width:28px; height:28px; fill:#7B5CF6;"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>
+      </button>
+      <div class="testimonials-marquee-container" style="overflow: hidden; width: 100%; position: relative; -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);">
+        <div class="testimonials-grid" id="testimonialsGrid" style="display: flex; gap: 24px; width: max-content; animation: scrollMarqueeThree 30s linear infinite;">
+          <!-- Cards injected by JS -->
+        </div>
       </div>
     </div>
   </div>
@@ -1131,7 +1167,7 @@ body { background-color: #FFFFFF; color: #111; font-size: 17px; font-weight: 500
       <!-- Cards injected by JS -->
     </div>
     <div class="services-cta reveal">
-      <button class="btn-primary" onclick="openModal()">Explore Our Services</button>
+      <button class="btn-primary" onclick="openModal()">Contact Us</button>
     </div>
     <div class="section-wave">
       <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1230,16 +1266,17 @@ body { background-color: #FFFFFF; color: #111; font-size: 17px; font-weight: 500
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <img src="logo.png" alt="Realtor Guide">
-        <p class="footer-brand-desc">India's leading real estate marketing agency. We help developers and brokers generate high-quality leads that convert into sales.</p>
+        <a href="#" class="footer-logo"><img src="logo.png" alt="Realtor Guide"></a>
+        <p class="footer-brand-desc">Belapur Station Tower no 10th,6th floor ,Realtor Guide</p>
       </div>
       <div class="footer-col">
         <h4>Quick Links</h4>
         <ul>
-          <li><a href="#hero">Home</a></li>
-          <li><a href="#clients">Case Studies</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="index.html#hero">Home</a></li>
+          <li><a href="index.html#clients">Case Studies</a></li>
+          <li><a href="index.html#services">Services</a></li>
+          <li><a href="career.html">Career</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -1255,6 +1292,9 @@ body { background-color: #FFFFFF; color: #111; font-size: 17px; font-weight: 500
         <h4>Connect</h4>
         <div class="footer-socials">
           <a href="https://www.instagram.com/_realtorguide?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="footer-social" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="none" stroke="#6E3482" stroke-width="2"/><circle cx="12" cy="12" r="5" fill="none" stroke="#6E3482" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.5" fill="#6E3482" stroke="none"/></svg></a>
+          <a href="https://www.facebook.com/realtorguidemarketing/" target="_blank" class="footer-social" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" fill="none" stroke="#6E3482" stroke-width="2"/></svg></a>
+          <a href="https://in.linkedin.com/company/realtor-guide" target="_blank" class="footer-social" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" fill="none" stroke="#6E3482" stroke-width="2"/><rect x="2" y="9" width="4" height="12" fill="none" stroke="#6E3482" stroke-width="2"/><circle cx="4" cy="4" r="2" fill="none" stroke="#6E3482" stroke-width="2"/></svg></a>
+          <a href="https://www.youtube.com/@realtorguideofficial" target="_blank" class="footer-social" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33 2.78 2.78 0 0 0 1.94 2c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.33 29 29 0 0 0-.46-5.33z" fill="none" stroke="#6E3482" stroke-width="2"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="#6E3482"/></svg></a>
         </div>
         <a href="https://wa.me/917007319062?text=Hello%20Realtor%20Guide%2C%20I%20would%20like%20to%20know%20more%20about%20your%20services." target="_blank" class="footer-whatsapp">
           <svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
@@ -1265,8 +1305,8 @@ body { background-color: #FFFFFF; color: #111; font-size: 17px; font-weight: 500
     <div class="footer-bottom">
       <span>&copy; 2026 Realtor Guide. All rights reserved.</span>
       <div class="footer-bottom-links">
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms of Service</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
       </div>
     </div>
   </div>
@@ -1319,15 +1359,11 @@ body { background-color: #FFFFFF; color: #111; font-size: 17px; font-weight: 500
 <script>
 // ===== DATA =====
 const clientsData = [
-  { name:'Raheja Universal', type:'Case Study', location:'Juinagar' },
-  { name:'Siddhivinayak', type:'Case Study', location:'Pushpak Nagar' },
-  { name:'Paradise Pyramid', type:'Case Study', location:'Juinagar' },
-  { name:'Neelkant Darshan', type:'Case Study', location:'Kharghar' },
-  { name:'Magnus', type:'Case Study', location:'Ulwe' },
-  { name:'The Woods (Plot)', type:'Case Study', location:'Karjat' },
-  { name:'DLF Plot & Bungalow', type:'Case Study', location:'Gurugram' },
-  { name:'Canal House', type:'Case Study', location:'Zirakpur Chandigarh' },
-  { name:'Skymark (Plot)', type:'Case Study', location:'Lucknow' }
+  { name:'Raheja Universal', type:'Case Study', location:'Juinagar', logo:'Case study/case study 1/logo.png' },
+  { name:'Siddhivinayak', type:'Case Study', location:'Pushpak Nagar', logo:'Case study/case study 2/logo.png' },
+  { name:'Paradise Pyramid', type:'Case Study', location:'Juinagar', logo:'Case study/case study 3/logo.png' },
+  { name:'Neelkant Darshan', type:'Case Study', location:'Kharghar', logo:'Case study/case study 4/logo.png' },
+  { name:'Magnus', type:'Case Study', location:'Ulwe', logo:'Case study/case study 5/logo.png' }
 ];
 
 const videosData = [
@@ -1423,9 +1459,11 @@ const caseStudiesDataNew = [
   let htmlString = "";
   extendedData.forEach((c)=>{
     htmlString += `
-      <div class="client-card-marquee" style="width: 280px; flex-shrink: 0; padding: 30px; border-radius: 30px; background: #F8F7FF; border: 1px solid rgba(123,92,246,0.1);">
-        <div style="font-family:'Inter',sans-serif; font-size: 1.3rem; font-weight: 800; color: #1D1D2B; margin-bottom: 16px;">${c.name}</div>
-        <div style="display: flex; align-items: center; gap: 8px; font-size: 0.9rem; color: #4B5563; font-weight: 500;">
+      <div class="client-card-marquee" style="width: 280px; height: 180px; flex-shrink: 0; padding: 30px; border-radius: 30px; background: #F8F7FF; border: 1px solid rgba(123,92,246,0.1); display: flex; flex-direction: column; justify-content: center; align-items: center;">
+        <div style="flex: 1; display: flex; align-items: center; justify-content: center; width: 100%; margin-bottom: 12px;">
+          <img src="${c.logo}" alt="${c.name} logo" style="max-width: 80%; max-height: 80px; object-fit: contain; filter: drop-shadow(0 4px 6px rgba(0,0,0,0.05));" loading="lazy" />
+        </div>
+        <div style="display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 0.9rem; color: #4B5563; font-weight: 500;">
           <span style="width: 8px; height: 8px; border-radius: 50%; background: #34D399;"></span>${c.location}
         </div>
       </div>`;
@@ -1455,7 +1493,7 @@ const caseStudiesDataNew = [
     `;
   });
   
-  carousel.innerHTML = cardsHTML + cardsHTML; // Duplicate for endless scroll
+  carousel.innerHTML = cardsHTML + cardsHTML + cardsHTML; // Triplicate for endless scroll
 })();
 
 window.toggleProductionVideo = function(card, e) {
@@ -1488,6 +1526,48 @@ window.toggleProductionVideo = function(card, e) {
   }
 };
 
+window.scrollMarqueeGrid = function(gridId, amount) {
+  const grid = document.getElementById(gridId);
+  if (!grid) return;
+  
+  if (!grid.classList.contains('manual-override')) {
+    const style = window.getComputedStyle(grid);
+    const matrix = new WebKitCSSMatrix(style.transform);
+    const translateX = matrix.m41; // Get current X translation
+    
+    grid.classList.add('manual-override');
+    grid.style.animation = 'none'; // Completely remove CSS animation
+    grid.style.transform = 'none'; // Reset transform
+    
+    grid.parentElement.style.overflowX = 'auto';
+    grid.parentElement.scrollLeft = Math.abs(translateX); // Maintain visual position
+  }
+  
+  grid.parentElement.scrollBy({ left: amount, behavior: 'smooth' });
+};
+
+document.addEventListener("DOMContentLoaded", function() {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) {
+        const video = entry.target;
+        if (!video.paused) {
+          video.pause();
+          const card = video.closest('.testimonial-card') || video.closest('.video-card');
+          if (card) card.classList.remove('playing');
+          const overlay = video.nextElementSibling;
+          if (overlay && overlay.classList.contains('video-overlay')) overlay.style.opacity = '1';
+        }
+      }
+    });
+  }, { threshold: 0.1 });
+
+  // Wait a bit for render
+  setTimeout(() => {
+    document.querySelectorAll('video').forEach(vid => observer.observe(vid));
+  }, 1000);
+});
+
 // Services
 (function renderServices(){
   const grid = document.getElementById('servicesGrid');
@@ -1507,13 +1587,13 @@ window.toggleProductionVideo = function(card, e) {
   if(!grid) return;
   grid.innerHTML = '';
 
-  const marqueeData = [...testimonialsData, ...testimonialsData]; // Duplicate once for seamless loop
+  const marqueeData = [...testimonialsData, ...testimonialsData, ...testimonialsData]; // Triplicate for seamless loop
   let cardsHTML = '';
   marqueeData.forEach((t,i)=>{
     cardsHTML += `
       <div class="testimonial-card reveal" data-tindex="${i}" style="width: 320px; flex-shrink: 0; position: relative;">
         <div class="testimonial-video-wrap" onclick="toggleTestimonialVideo(this, event)">
-          <video src="${t.video}#t=4.0" playsinline loop preload="auto" style="width:100%; aspect-ratio:9/16; max-height: 600px; object-fit:cover; display:block; border-radius:30px;"></video>
+          <video src="${t.video}#t=4.0" playsinline loop preload="metadata" style="width:100%; aspect-ratio:9/16; max-height: 600px; object-fit:cover; display:block; border-radius:30px;"></video>
           <div class="testimonial-video-play">
             <svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
           </div>
@@ -1676,7 +1756,7 @@ function handleModalSubmit(e){
   }
 }
 
-window.GOOGLE_SHEET_WEBAPP_URL = "https://script.google.com/macros/s/AKfycbw-_RgaBTRHfd8u_btDxV5dP32pLrsDhtaS8Lik9IE1LTrvFiLQZSQihNIMGnOkfkM/exec"; // REPLACE THIS URL
+window.GOOGLE_SHEET_WEBAPP_URL = "https://script.google.com/macros/s/AKfycbzMAnoR7vwPUb1qv13jQeCCLdva5UwuJjk9ZLTHMhEfosJaxdA7jr6oImUDjxqK9lw/exec"; // REPLACE THIS URL
 
 // ===== CONTACT FORM =====
 function handleContactSubmit(e){

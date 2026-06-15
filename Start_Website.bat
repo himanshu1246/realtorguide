@@ -1,15 +1,24 @@
 @echo off
-echo Starting the Realtor Guide Premium Website...
-echo This might take a few seconds to compile...
+title Realtor Guide Website Server
+color 0A
+
+echo.
+echo  ============================================
+echo    Realtor Guide - Starting Website...
+echo  ============================================
 echo.
 
-:: Check if node modules are installed
-if not exist node_modules (
-    echo Installing dependencies for the first time...
-    call npm install
-)
+:: Kill any existing Node.js processes to free port 3000
+echo  Clearing existing servers...
+taskkill /F /IM node.exe >nul 2>&1
+timeout /t 1 /nobreak >nul
 
-:: Start the Next.js development server and open browser
-echo Starting local server on http://localhost:3000
-start http://localhost:3000
-call npm run dev
+:: Start the server in background and wait 3 seconds before opening browser
+echo  Starting server on http://localhost:3000
+echo.
+start "" /b cmd /c "timeout /t 3 /nobreak >nul && start http://localhost:3000"
+
+:: Run the server (pure HTML - no Next.js)
+node "%~dp0server.js"
+
+pause
