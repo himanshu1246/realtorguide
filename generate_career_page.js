@@ -162,7 +162,7 @@ function handleAppSubmit(e) {
   btn.innerText = 'Submitting...';
   btn.disabled = true;
   
-  const scriptURL = window.GOOGLE_SHEET_WEBAPP_URL || 'https://script.google.com/macros/s/AKfycbzPQA68Jo7ZH1tFw8VBf9zN2IuTY3qfud-FFjpb7G4nqvd8YkOsdvA4DRUUgKGA2EKUlg/exec';
+  const scriptURL = window.GOOGLE_SHEET_WEBAPP_URL || 'https://script.google.com/macros/s/AKfycbwnbZm3q7t9sAEJCrSO6jWgwded7KOwRe9LF1i5yA0mQb3qYMLc7iWFSn2Sp0pqqM3Zpw/exec';
   
   fetch(scriptURL, { method: 'POST', body: new FormData(form), mode: 'no-cors' })
     .then(() => {

@@ -1708,75 +1708,44 @@ document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeModal(); });
 
 function handleModalSubmit(e){
   e.preventDefault();
-  const form = e.target;
-  const btn = document.getElementById('modalSubmitBtn');
+  var form = e.target;
+  var btn = document.getElementById('modalSubmitBtn');
   btn.innerHTML = '<span class="spinner"></span>';
   btn.disabled = true;
-  
-  const scriptURL = window.GOOGLE_SHEET_WEBAPP_URL || '';
-  
+  var scriptURL = window.GOOGLE_SHEET_WEBAPP_URL || '';
   if (scriptURL) {
-    fetch(scriptURL, { method: 'POST', body: new FormData(form), mode: 'no-cors' })
-      .then(() => {
-        document.getElementById('modalBody').style.display = 'none';
-        document.getElementById('modalSuccess').style.display = 'block';
-        setTimeout(closeModal, 2500);
-        form.reset();
-        btn.innerHTML = 'Send Enquiry';
-        btn.disabled = false;
-      })
-      .catch(error => {
-        console.error('Error!', error);
-        btn.innerHTML = 'Error! Try Again';
-        btn.disabled = false;
-      });
-  } else {
-    setTimeout(()=>{
-      document.getElementById('modalBody').style.display = 'none';
-      document.getElementById('modalSuccess').style.display = 'block';
-      setTimeout(closeModal, 2500);
-      form.reset();
-      btn.innerHTML = 'Send Enquiry';
-      btn.disabled = false;
-    }, 1500);
+    fetch(scriptURL, { method: 'POST', body: new FormData(form), mode: 'no-cors' }).catch(function(){});
   }
+  setTimeout(function(){
+    document.getElementById('modalBody').style.display = 'none';
+    document.getElementById('modalSuccess').style.display = 'block';
+    setTimeout(closeModal, 2500);
+    form.reset();
+    btn.innerHTML = 'Send Enquiry';
+    btn.disabled = false;
+  }, 1500);
 }
 
-window.GOOGLE_SHEET_WEBAPP_URL = "https://script.google.com/macros/s/AKfycbzPQA68Jo7ZH1tFw8VBf9zN2IuTY3qfud-FFjpb7G4nqvd8YkOsdvA4DRUUgKGA2EKUlg/exec"; // REPLACE THIS URL
+window.GOOGLE_SHEET_WEBAPP_URL = "https://script.google.com/macros/s/AKfycbwnbZm3q7t9sAEJCrSO6jWgwded7KOwRe9LF1i5yA0mQb3qYMLc7iWFSn2Sp0pqqM3Zpw/exec"; // REPLACE THIS URL
 
 // ===== CONTACT FORM =====
 function handleContactSubmit(e){
   e.preventDefault();
-  const form = e.target;
-  const btn = document.getElementById('contactSubmitBtn');
+  var form = e.target;
+  var btn = document.getElementById('contactSubmitBtn');
   btn.innerHTML = '<span class="spinner"></span>';
   btn.disabled = true;
-  
-  const scriptURL = window.GOOGLE_SHEET_WEBAPP_URL || '';
-  
+  var scriptURL = window.GOOGLE_SHEET_WEBAPP_URL || '';
   if (scriptURL) {
-    fetch(scriptURL, { method: 'POST', body: new FormData(form), mode: 'no-cors' })
-      .then(() => {
-        document.getElementById('contactForm').style.display = 'none';
-        document.getElementById('contactSuccess').style.display = 'block';
-        form.reset();
-        btn.innerHTML = 'Send Your Enquiry';
-        btn.disabled = false;
-      })
-      .catch(error => {
-        console.error('Error!', error);
-        btn.innerHTML = 'Error! Try Again';
-        btn.disabled = false;
-      });
-  } else {
-    setTimeout(()=>{
-      document.getElementById('contactForm').style.display = 'none';
-      document.getElementById('contactSuccess').style.display = 'block';
-      form.reset();
-      btn.innerHTML = 'Send Your Enquiry';
-      btn.disabled = false;
-    }, 1500);
+    fetch(scriptURL, { method: 'POST', body: new FormData(form), mode: 'no-cors' }).catch(function(){});
   }
+  setTimeout(function(){
+    document.getElementById('contactForm').style.display = 'none';
+    document.getElementById('contactSuccess').style.display = 'block';
+    form.reset();
+    btn.innerHTML = 'Send Your Enquiry';
+    btn.disabled = false;
+  }, 1500);
 }
 
 // ===== VIDEO CONTROLS =====

@@ -15,24 +15,17 @@ export function Contact() {
     setFormStatus("submitting");
     const formData = new FormData(formRef.current);
     
-    try {
-      const scriptUrl = process.env.NEXT_PUBLIC_GOOGLE_SHEETS_URL || "https://script.google.com/macros/s/AKfycbzPQA68Jo7ZH1tFw8VBf9zN2IuTY3qfud-FFjpb7G4nqvd8YkOsdvA4DRUUgKGA2EKUlg/exec";
-      if (scriptUrl) {
-        await fetch(scriptUrl, {
-          method: "POST",
-          body: formData,
-          mode: "no-cors",
-        });
-      }
+    const scriptUrl = process.env.NEXT_PUBLIC_GOOGLE_SHEETS_URL || "https://script.google.com/macros/s/AKfycbwnbZm3q7t9sAEJCrSO6jWgwded7KOwRe9LF1i5yA0mQb3qYMLc7iWFSn2Sp0pqqM3Zpw/exec";
+    if (scriptUrl) {
+      fetch(scriptUrl, { method: "POST", body: formData, mode: "no-cors" }).catch(() => {});
+    }
+    setTimeout(() => {
       setFormStatus("success");
       setTimeout(() => {
         setFormStatus("idle");
         if (formRef.current) formRef.current.reset();
       }, 3000);
-    } catch (err) {
-      console.error(err);
-      setFormStatus("idle");
-    }
+    }, 1500);
   };
 
   return (
