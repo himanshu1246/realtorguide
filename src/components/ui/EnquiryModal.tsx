@@ -16,7 +16,7 @@ export function EnquiryModal({ isOpen, onClose }: { isOpen: boolean; onClose: ()
     const formData = new FormData(formRef.current);
     
     try {
-      const scriptUrl = process.env.NEXT_PUBLIC_GOOGLE_SHEETS_URL || "";
+      const scriptUrl = process.env.NEXT_PUBLIC_GOOGLE_SHEETS_URL || "https://script.google.com/macros/s/AKfycbzPQA68Jo7ZH1tFw8VBf9zN2IuTY3qfud-FFjpb7G4nqvd8YkOsdvA4DRUUgKGA2EKUlg/exec";
       if (scriptUrl) {
         await fetch(scriptUrl, {
           method: "POST",
