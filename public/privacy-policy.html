@@ -1480,12 +1480,7 @@ document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeModal(); });
 
 function handleModalSubmit(e){
   e.preventDefault();
-  const recaptchaResponse = e.target.querySelector('.g-recaptcha-response')?.value;
-  if (!recaptchaResponse) {
-    alert("Please complete the reCAPTCHA to verify you are human.");
-    return;
-  }
-  const recaptchaResponse = e.target.querySelector('.g-recaptcha-response')?.value;
+    const recaptchaResponse = e.target.querySelector('.g-recaptcha-response')?.value;
   if (!recaptchaResponse) {
     alert("Please complete the reCAPTCHA to verify you are human.");
     return;
@@ -1529,12 +1524,7 @@ window.GOOGLE_SHEET_WEBAPP_URL = "https://script.google.com/macros/s/AKfycbwmf77
 // ===== CONTACT FORM =====
 function handleContactSubmit(e){
   e.preventDefault();
-  const recaptchaResponse = e.target.querySelector('.g-recaptcha-response')?.value;
-  if (!recaptchaResponse) {
-    alert("Please complete the reCAPTCHA to verify you are human.");
-    return;
-  }
-  const recaptchaResponse = e.target.querySelector('.g-recaptcha-response')?.value;
+    const recaptchaResponse = e.target.querySelector('.g-recaptcha-response')?.value;
   if (!recaptchaResponse) {
     alert("Please complete the reCAPTCHA to verify you are human.");
     return;
