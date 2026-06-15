@@ -20,21 +20,8 @@
 <meta property="og:description" content="Grow your real estate business with our end-to-end marketing ecosystem.">
 <meta property="og:type" content="website">
 <title>Realtor Guide — Premium Real Estate Marketing Agency</title>
-<script>
-// Basic front-end security to prevent casual inspection
-document.addEventListener('contextmenu', event => event.preventDefault());
-document.addEventListener('keydown', event => {
-    if (event.keyCode == 123) { // F12
-        event.preventDefault();
-    }
-    if (event.ctrlKey && event.shiftKey && (event.keyCode == 73 || event.keyCode == 74)) { // Ctrl+Shift+I or J
-        event.preventDefault();
-    }
-    if (event.ctrlKey && event.keyCode == 85) { // Ctrl+U
-        event.preventDefault();
-    }
-});
-</script>
+<!-- Removed front-end security deterrent -->
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 <link rel="icon" href="icon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1742,6 +1729,11 @@ document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeModal(); });
 
 function handleModalSubmit(e){
   e.preventDefault();
+  const recaptchaResponse = e.target.querySelector('.g-recaptcha-response')?.value;
+  if (!recaptchaResponse) {
+    alert("Please complete the reCAPTCHA to verify you are human.");
+    return;
+  }
   const form = e.target;
   const btn = document.getElementById('modalSubmitBtn');
   btn.innerHTML = '<span class="spinner"></span>';
@@ -1781,6 +1773,11 @@ window.GOOGLE_SHEET_WEBAPP_URL = "https://script.google.com/macros/s/AKfycbzMAno
 // ===== CONTACT FORM =====
 function handleContactSubmit(e){
   e.preventDefault();
+  const recaptchaResponse = e.target.querySelector('.g-recaptcha-response')?.value;
+  if (!recaptchaResponse) {
+    alert("Please complete the reCAPTCHA to verify you are human.");
+    return;
+  }
   const form = e.target;
   const btn = document.getElementById('contactSubmitBtn');
   btn.innerHTML = '<span class="spinner"></span>';

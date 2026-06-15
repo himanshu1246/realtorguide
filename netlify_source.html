@@ -1360,6 +1360,11 @@ document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeModal(); });
 
 function handleModalSubmit(e){
   e.preventDefault();
+  const recaptchaResponse = e.target.querySelector('.g-recaptcha-response')?.value;
+  if (!recaptchaResponse) {
+    alert("Please complete the reCAPTCHA to verify you are human.");
+    return;
+  }
   const btn = document.getElementById('modalSubmitBtn');
   btn.innerHTML = '<span class="spinner"></span>';
   btn.disabled = true;
@@ -1373,6 +1378,11 @@ function handleModalSubmit(e){
 // ===== CONTACT FORM =====
 function handleContactSubmit(e){
   e.preventDefault();
+  const recaptchaResponse = e.target.querySelector('.g-recaptcha-response')?.value;
+  if (!recaptchaResponse) {
+    alert("Please complete the reCAPTCHA to verify you are human.");
+    return;
+  }
   const btn = document.getElementById('contactSubmitBtn');
   btn.innerHTML = '<span class="spinner"></span>';
   btn.disabled = true;

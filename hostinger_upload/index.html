@@ -1645,6 +1645,11 @@ document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeModal(); });
 
 function handleModalSubmit(e){
   e.preventDefault();
+  const recaptchaResponse = e.target.querySelector('.g-recaptcha-response')?.value;
+  if (!recaptchaResponse) {
+    alert("Please complete the reCAPTCHA to verify you are human.");
+    return;
+  }
   const form = e.target;
   const btn = document.getElementById('modalSubmitBtn');
   btn.innerHTML = '<span class="spinner"></span>';
@@ -1684,6 +1689,11 @@ window.GOOGLE_SHEET_WEBAPP_URL = "https://script.google.com/macros/s/AKfycbw-_Rg
 // ===== CONTACT FORM =====
 function handleContactSubmit(e){
   e.preventDefault();
+  const recaptchaResponse = e.target.querySelector('.g-recaptcha-response')?.value;
+  if (!recaptchaResponse) {
+    alert("Please complete the reCAPTCHA to verify you are human.");
+    return;
+  }
   const form = e.target;
   const btn = document.getElementById('contactSubmitBtn');
   btn.innerHTML = '<span class="spinner"></span>';
