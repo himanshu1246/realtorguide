@@ -7,7 +7,7 @@ const directories = [
   path.join(__dirname, 'hostinger_upload')
 ];
 
-const NEW_URL = 'https://script.google.com/macros/s/AKfycbwYU5WdseRAmgEnf-KuY_KuCEPyuYkMIANe6e3gN9ukEwTeZQGbBu4YOCqIS9SDyIA/exec';
+const NEW_URL = 'https://script.google.com/macros/s/AKfycbzPQA68Jo7ZH1tFw8VBf9zN2IuTY3qfud-FFjpb7G4nqvd8YkOsdvA4DRUUgKGA2EKUlg/exec';
 
 function processFile(filePath) {
   if (!fs.existsSync(filePath)) return;

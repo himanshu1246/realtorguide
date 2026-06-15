@@ -16,7 +16,7 @@ export function Contact() {
     const formData = new FormData(formRef.current);
     
     try {
-      const scriptUrl = process.env.NEXT_PUBLIC_GOOGLE_SHEETS_URL || "https://script.google.com/macros/s/AKfycbwYU5WdseRAmgEnf-KuY_KuCEPyuYkMIANe6e3gN9ukEwTeZQGbBu4YOCqIS9SDyIA/exec";
+      const scriptUrl = process.env.NEXT_PUBLIC_GOOGLE_SHEETS_URL || "https://script.google.com/macros/s/AKfycbzPQA68Jo7ZH1tFw8VBf9zN2IuTY3qfud-FFjpb7G4nqvd8YkOsdvA4DRUUgKGA2EKUlg/exec";
       if (scriptUrl) {
         await fetch(scriptUrl, {
           method: "POST",
